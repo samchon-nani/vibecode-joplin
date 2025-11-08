@@ -1,0 +1,64 @@
+[
+  {
+    "id": "hospital-charity-1",
+    "name": "Hospital Financial Assistance Program",
+    "description": "Hospital-based charity care program for low-income patients",
+    "eligibilityCriteria": {
+      "maxIncomePercentOfFPL": 200,
+      "familySize": null,
+      "employmentStatus": null
+    },
+    "coverageAmount": "full",
+    "coverageType": "full"
+  },
+  {
+    "id": "medicaid-expansion",
+    "name": "Medicaid Expansion Program",
+    "description": "State Medicaid expansion for low-income individuals and families",
+    "eligibilityCriteria": {
+      "maxIncomePercentOfFPL": 138,
+      "familySize": null,
+      "employmentStatus": null
+    },
+    "coverageAmount": "full",
+    "coverageType": "full"
+  },
+  {
+    "id": "sliding-scale-1",
+    "name": "Sliding Scale Discount Program",
+    "description": "Income-based discount program",
+    "eligibilityCriteria": {
+      "maxIncomePercentOfFPL": 300,
+      "familySize": null,
+      "employmentStatus": null
+    },
+    "coverageAmount": 50,
+    "coverageType": "percentage"
+  },
+  {
+    "id": "unemployment-assistance",
+    "name": "Unemployment Assistance Program",
+    "description": "Special assistance for unemployed individuals",
+    "eligibilityCriteria": {
+      "maxIncome": null,
+      "maxIncomePercentOfFPL": 250,
+      "familySize": null,
+      "employmentStatus": ["unemployed", "part-time"]
+    },
+    "coverageAmount": 75,
+    "coverageType": "percentage"
+  },
+  {
+    "id": "federal-poverty-1",
+    "name": "Federal Poverty Level Assistance",
+    "description": "Assistance for families at or below federal poverty level",
+    "eligibilityCriteria": {
+      "maxIncomePercentOfFPL": 100,
+      "familySize": null,
+      "employmentStatus": null
+    },
+    "coverageAmount": "full",
+    "coverageType": "full"
+  }
+]
+

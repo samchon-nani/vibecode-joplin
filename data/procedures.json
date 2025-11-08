@@ -1,0 +1,58 @@
+[
+  {
+    "id": "MRI",
+    "name": "MRI",
+    "description": "MRI Scan - Brain without contrast",
+    "code_information": [
+      {
+        "code": "70551",
+        "type": "CPT"
+      }
+    ]
+  },
+  {
+    "id": "CT Scan",
+    "name": "CT Scan",
+    "description": "CT Scan - Chest without contrast",
+    "code_information": [
+      {
+        "code": "71250",
+        "type": "CPT"
+      }
+    ]
+  },
+  {
+    "id": "X-Ray",
+    "name": "X-Ray",
+    "description": "X-Ray - Chest, 2 views",
+    "code_information": [
+      {
+        "code": "71046",
+        "type": "CPT"
+      }
+    ]
+  },
+  {
+    "id": "Blood Test",
+    "name": "Blood Test",
+    "description": "Complete Blood Count (CBC) with differential",
+    "code_information": [
+      {
+        "code": "85025",
+        "type": "CPT"
+      }
+    ]
+  },
+  {
+    "id": "Ultrasound",
+    "name": "Ultrasound",
+    "description": "Ultrasound - Abdomen complete",
+    "code_information": [
+      {
+        "code": "76700",
+        "type": "CPT"
+      }
+    ]
+  }
+]
+

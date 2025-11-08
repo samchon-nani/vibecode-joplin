@@ -1,0 +1,2676 @@
+[
+  {
+    "hospital_id": "1",
+    "hospital_name": "Beverly Hills Medical Center",
+    "hospital_location": "Main Campus",
+    "hospital_address": "123 Medical Plaza, Beverly Hills, CA 90210",
+    "hospital_ein": "95-000001",
+    "last_updated_on": "2025-11-08",
+    "version": "2.0.0",
+    "phone": "(310) 555-0100",
+    "coordinates": {
+      "lat": 34.07,
+      "lng": -118.4
+    },
+    "in_network_insurances": [
+      "bluecross",
+      "aetna",
+      "cigna",
+      "unitedhealthcare"
+    ],
+    "affirmation": {
+      "affirmation": "To the best of its knowledge and belief, the hospital has included all applicable standard charge information in accordance with the requirements of 45 CFR 180.50, and the information encoded is accurate as of the date indicated.",
+      "confirm_affirmation": true
+    },
+    "standard_charge_information": [
+      {
+        "description": "MRI Scan - Brain without contrast",
+        "code_information": [
+          {
+            "code": "70551",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 2800.00,
+          "discounted_cash_price": 2800.00,
+          "de_identified_minimum_negotiated_charge": 420.00,
+          "de_identified_maximum_negotiated_charge": 460.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 450.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 450.00
+            },
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 420.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 420.00
+            },
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 440.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 440.00
+            },
+            {
+              "payer_name": "UnitedHealthcare",
+              "plan_name": "Choice Plus",
+              "standard_charge": 460.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 460.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "CT Scan - Chest without contrast",
+        "code_information": [
+          {
+            "code": "71250",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 2200.00,
+          "discounted_cash_price": 2200.00,
+          "de_identified_minimum_negotiated_charge": 350.00,
+          "de_identified_maximum_negotiated_charge": 390.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 380.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 380.00
+            },
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 350.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 350.00
+            },
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 370.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 370.00
+            },
+            {
+              "payer_name": "UnitedHealthcare",
+              "plan_name": "Choice Plus",
+              "standard_charge": 390.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 390.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "X-Ray - Chest, 2 views",
+        "code_information": [
+          {
+            "code": "71046",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 450.00,
+          "discounted_cash_price": 450.00,
+          "de_identified_minimum_negotiated_charge": 110.00,
+          "de_identified_maximum_negotiated_charge": 125.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 120.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 120.00
+            },
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 110.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 110.00
+            },
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 115.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 115.00
+            },
+            {
+              "payer_name": "UnitedHealthcare",
+              "plan_name": "Choice Plus",
+              "standard_charge": 125.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 125.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "Complete Blood Count (CBC) with differential",
+        "code_information": [
+          {
+            "code": "85025",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 320.00,
+          "discounted_cash_price": 320.00,
+          "de_identified_minimum_negotiated_charge": 75.00,
+          "de_identified_maximum_negotiated_charge": 85.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 80.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 80.00
+            },
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 75.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 75.00
+            },
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 78.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 78.00
+            },
+            {
+              "payer_name": "UnitedHealthcare",
+              "plan_name": "Choice Plus",
+              "standard_charge": 85.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 85.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "Ultrasound - Abdomen complete",
+        "code_information": [
+          {
+            "code": "76700",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 1200.00,
+          "discounted_cash_price": 1200.00,
+          "de_identified_minimum_negotiated_charge": 260.00,
+          "de_identified_maximum_negotiated_charge": 290.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 280.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 280.00
+            },
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 260.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 260.00
+            },
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 270.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 270.00
+            },
+            {
+              "payer_name": "UnitedHealthcare",
+              "plan_name": "Choice Plus",
+              "standard_charge": 290.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 290.00
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "hospital_id": "2",
+    "hospital_name": "Los Angeles General Hospital",
+    "hospital_location": "Main Campus",
+    "hospital_address": "1200 N State St, Los Angeles, CA 90033",
+    "hospital_ein": "95-000002",
+    "last_updated_on": "2025-11-08",
+    "version": "2.0.0",
+    "phone": "(213) 555-0200",
+    "coordinates": {
+      "lat": 34.05,
+      "lng": -118.24
+    },
+    "in_network_insurances": [
+      "bluecross",
+      "aetna",
+      "humana",
+      "kaiser"
+    ],
+    "affirmation": {
+      "affirmation": "To the best of its knowledge and belief, the hospital has included all applicable standard charge information in accordance with the requirements of 45 CFR 180.50, and the information encoded is accurate as of the date indicated.",
+      "confirm_affirmation": true
+    },
+    "standard_charge_information": [
+      {
+        "description": "MRI Scan - Brain without contrast",
+        "code_information": [
+          {
+            "code": "70551",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 3200.00,
+          "discounted_cash_price": 3200.00,
+          "de_identified_minimum_negotiated_charge": 480.00,
+          "de_identified_maximum_negotiated_charge": 520.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 520.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 520.00
+            },
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 500.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 500.00
+            },
+            {
+              "payer_name": "Humana",
+              "plan_name": "HMO",
+              "standard_charge": 510.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 510.00
+            },
+            {
+              "payer_name": "Kaiser Permanente",
+              "plan_name": "HMO",
+              "standard_charge": 480.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 480.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "CT Scan - Chest without contrast",
+        "code_information": [
+          {
+            "code": "71250",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 2500.00,
+          "discounted_cash_price": 2500.00,
+          "de_identified_minimum_negotiated_charge": 380.00,
+          "de_identified_maximum_negotiated_charge": 420.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 420.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 420.00
+            },
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 400.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 400.00
+            },
+            {
+              "payer_name": "Humana",
+              "plan_name": "HMO",
+              "standard_charge": 410.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 410.00
+            },
+            {
+              "payer_name": "Kaiser Permanente",
+              "plan_name": "HMO",
+              "standard_charge": 380.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 380.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "X-Ray - Chest, 2 views",
+        "code_information": [
+          {
+            "code": "71046",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 550.00,
+          "discounted_cash_price": 550.00,
+          "de_identified_minimum_negotiated_charge": 130.00,
+          "de_identified_maximum_negotiated_charge": 150.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 150.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 150.00
+            },
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 140.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 140.00
+            },
+            {
+              "payer_name": "Humana",
+              "plan_name": "HMO",
+              "standard_charge": 145.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 145.00
+            },
+            {
+              "payer_name": "Kaiser Permanente",
+              "plan_name": "HMO",
+              "standard_charge": 130.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 130.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "Complete Blood Count (CBC) with differential",
+        "code_information": [
+          {
+            "code": "85025",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 380.00,
+          "discounted_cash_price": 380.00,
+          "de_identified_minimum_negotiated_charge": 85.00,
+          "de_identified_maximum_negotiated_charge": 95.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 95.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 95.00
+            },
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 90.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 90.00
+            },
+            {
+              "payer_name": "Humana",
+              "plan_name": "HMO",
+              "standard_charge": 92.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 92.00
+            },
+            {
+              "payer_name": "Kaiser Permanente",
+              "plan_name": "HMO",
+              "standard_charge": 85.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 85.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "Ultrasound - Abdomen complete",
+        "code_information": [
+          {
+            "code": "76700",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 1400.00,
+          "discounted_cash_price": 1400.00,
+          "de_identified_minimum_negotiated_charge": 280.00,
+          "de_identified_maximum_negotiated_charge": 320.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 320.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 320.00
+            },
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 300.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 300.00
+            },
+            {
+              "payer_name": "Humana",
+              "plan_name": "HMO",
+              "standard_charge": 310.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 310.00
+            },
+            {
+              "payer_name": "Kaiser Permanente",
+              "plan_name": "HMO",
+              "standard_charge": 280.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 280.00
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "hospital_id": "3",
+    "hospital_name": "Orange County Regional Medical",
+    "hospital_location": "Main Campus",
+    "hospital_address": "101 The City Dr S, Orange, CA 92868",
+    "hospital_ein": "95-000003",
+    "last_updated_on": "2025-11-08",
+    "version": "2.0.0",
+    "phone": "(714) 555-0300",
+    "coordinates": {
+      "lat": 33.79,
+      "lng": -117.85
+    },
+    "in_network_insurances": [
+      "cigna",
+      "unitedhealthcare",
+      "humana"
+    ],
+    "affirmation": {
+      "affirmation": "To the best of its knowledge and belief, the hospital has included all applicable standard charge information in accordance with the requirements of 45 CFR 180.50, and the information encoded is accurate as of the date indicated.",
+      "confirm_affirmation": true
+    },
+    "standard_charge_information": [
+      {
+        "description": "MRI Scan - Brain without contrast",
+        "code_information": [
+          {
+            "code": "70551",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 2500.00,
+          "discounted_cash_price": 2500.00,
+          "de_identified_minimum_negotiated_charge": 480.00,
+          "de_identified_maximum_negotiated_charge": 500.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 480.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 480.00
+            },
+            {
+              "payer_name": "UnitedHealthcare",
+              "plan_name": "Choice Plus",
+              "standard_charge": 500.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 500.00
+            },
+            {
+              "payer_name": "Humana",
+              "plan_name": "HMO",
+              "standard_charge": 490.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 490.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "CT Scan - Chest without contrast",
+        "code_information": [
+          {
+            "code": "71250",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 2000.00,
+          "discounted_cash_price": 2000.00,
+          "de_identified_minimum_negotiated_charge": 390.00,
+          "de_identified_maximum_negotiated_charge": 410.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 390.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 390.00
+            },
+            {
+              "payer_name": "UnitedHealthcare",
+              "plan_name": "Choice Plus",
+              "standard_charge": 410.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 410.00
+            },
+            {
+              "payer_name": "Humana",
+              "plan_name": "HMO",
+              "standard_charge": 400.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 400.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "X-Ray - Chest, 2 views",
+        "code_information": [
+          {
+            "code": "71046",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 480.00,
+          "discounted_cash_price": 480.00,
+          "de_identified_minimum_negotiated_charge": 130.00,
+          "de_identified_maximum_negotiated_charge": 140.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 130.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 130.00
+            },
+            {
+              "payer_name": "UnitedHealthcare",
+              "plan_name": "Choice Plus",
+              "standard_charge": 140.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 140.00
+            },
+            {
+              "payer_name": "Humana",
+              "plan_name": "HMO",
+              "standard_charge": 135.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 135.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "Complete Blood Count (CBC) with differential",
+        "code_information": [
+          {
+            "code": "85025",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 350.00,
+          "discounted_cash_price": 350.00,
+          "de_identified_minimum_negotiated_charge": 85.00,
+          "de_identified_maximum_negotiated_charge": 90.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 85.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 85.00
+            },
+            {
+              "payer_name": "UnitedHealthcare",
+              "plan_name": "Choice Plus",
+              "standard_charge": 90.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 90.00
+            },
+            {
+              "payer_name": "Humana",
+              "plan_name": "HMO",
+              "standard_charge": 88.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 88.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "Ultrasound - Abdomen complete",
+        "code_information": [
+          {
+            "code": "76700",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 1300.00,
+          "discounted_cash_price": 1300.00,
+          "de_identified_minimum_negotiated_charge": 290.00,
+          "de_identified_maximum_negotiated_charge": 310.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 290.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 290.00
+            },
+            {
+              "payer_name": "UnitedHealthcare",
+              "plan_name": "Choice Plus",
+              "standard_charge": 310.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 310.00
+            },
+            {
+              "payer_name": "Humana",
+              "plan_name": "HMO",
+              "standard_charge": 300.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 300.00
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "hospital_id": "4",
+    "hospital_name": "San Diego Memorial Hospital",
+    "hospital_location": "Main Campus",
+    "hospital_address": "200 W Arbor Dr, San Diego, CA 92103",
+    "hospital_ein": "95-000004",
+    "last_updated_on": "2025-11-08",
+    "version": "2.0.0",
+    "phone": "(619) 555-0400",
+    "coordinates": {
+      "lat": 32.72,
+      "lng": -117.16
+    },
+    "in_network_insurances": [
+      "bluecross",
+      "aetna",
+      "cigna",
+      "unitedhealthcare",
+      "humana"
+    ],
+    "affirmation": {
+      "affirmation": "To the best of its knowledge and belief, the hospital has included all applicable standard charge information in accordance with the requirements of 45 CFR 180.50, and the information encoded is accurate as of the date indicated.",
+      "confirm_affirmation": true
+    },
+    "standard_charge_information": [
+      {
+        "description": "MRI Scan - Brain without contrast",
+        "code_information": [
+          {
+            "code": "70551",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 2900.00,
+          "discounted_cash_price": 2900.00,
+          "de_identified_minimum_negotiated_charge": 480.00,
+          "de_identified_maximum_negotiated_charge": 510.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 500.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 500.00
+            },
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 480.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 480.00
+            },
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 490.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 490.00
+            },
+            {
+              "payer_name": "UnitedHealthcare",
+              "plan_name": "Choice Plus",
+              "standard_charge": 510.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 510.00
+            },
+            {
+              "payer_name": "Humana",
+              "plan_name": "HMO",
+              "standard_charge": 495.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 495.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "CT Scan - Chest without contrast",
+        "code_information": [
+          {
+            "code": "71250",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 2300.00,
+          "discounted_cash_price": 2300.00,
+          "de_identified_minimum_negotiated_charge": 380.00,
+          "de_identified_maximum_negotiated_charge": 410.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 400.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 400.00
+            },
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 380.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 380.00
+            },
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 390.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 390.00
+            },
+            {
+              "payer_name": "UnitedHealthcare",
+              "plan_name": "Choice Plus",
+              "standard_charge": 410.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 410.00
+            },
+            {
+              "payer_name": "Humana",
+              "plan_name": "HMO",
+              "standard_charge": 395.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 395.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "X-Ray - Chest, 2 views",
+        "code_information": [
+          {
+            "code": "71046",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 500.00,
+          "discounted_cash_price": 500.00,
+          "de_identified_minimum_negotiated_charge": 130.00,
+          "de_identified_maximum_negotiated_charge": 145.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 140.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 140.00
+            },
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 130.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 130.00
+            },
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 135.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 135.00
+            },
+            {
+              "payer_name": "UnitedHealthcare",
+              "plan_name": "Choice Plus",
+              "standard_charge": 145.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 145.00
+            },
+            {
+              "payer_name": "Humana",
+              "plan_name": "HMO",
+              "standard_charge": 138.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 138.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "Complete Blood Count (CBC) with differential",
+        "code_information": [
+          {
+            "code": "85025",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 360.00,
+          "discounted_cash_price": 360.00,
+          "de_identified_minimum_negotiated_charge": 85.00,
+          "de_identified_maximum_negotiated_charge": 92.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 90.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 90.00
+            },
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 85.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 85.00
+            },
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 88.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 88.00
+            },
+            {
+              "payer_name": "UnitedHealthcare",
+              "plan_name": "Choice Plus",
+              "standard_charge": 92.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 92.00
+            },
+            {
+              "payer_name": "Humana",
+              "plan_name": "HMO",
+              "standard_charge": 87.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 87.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "Ultrasound - Abdomen complete",
+        "code_information": [
+          {
+            "code": "76700",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 1350.00,
+          "discounted_cash_price": 1350.00,
+          "de_identified_minimum_negotiated_charge": 280.00,
+          "de_identified_maximum_negotiated_charge": 310.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 300.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 300.00
+            },
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 280.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 280.00
+            },
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 290.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 290.00
+            },
+            {
+              "payer_name": "UnitedHealthcare",
+              "plan_name": "Choice Plus",
+              "standard_charge": 310.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 310.00
+            },
+            {
+              "payer_name": "Humana",
+              "plan_name": "HMO",
+              "standard_charge": 295.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 295.00
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "hospital_id": "5",
+    "hospital_name": "Riverside Community Hospital",
+    "hospital_location": "Main Campus",
+    "hospital_address": "4445 Magnolia Ave, Riverside, CA 92501",
+    "hospital_ein": "95-000005",
+    "last_updated_on": "2025-11-08",
+    "version": "2.0.0",
+    "phone": "(951) 555-0500",
+    "coordinates": {
+      "lat": 33.95,
+      "lng": -117.4
+    },
+    "in_network_insurances": [
+      "bluecross",
+      "aetna",
+      "kaiser"
+    ],
+    "affirmation": {
+      "affirmation": "To the best of its knowledge and belief, the hospital has included all applicable standard charge information in accordance with the requirements of 45 CFR 180.50, and the information encoded is accurate as of the date indicated.",
+      "confirm_affirmation": true
+    },
+    "standard_charge_information": [
+      {
+        "description": "MRI Scan - Brain without contrast",
+        "code_information": [
+          {
+            "code": "70551",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 3000.00,
+          "discounted_cash_price": 3000.00,
+          "de_identified_minimum_negotiated_charge": 500.00,
+          "de_identified_maximum_negotiated_charge": 550.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 550.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 550.00
+            },
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 530.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 530.00
+            },
+            {
+              "payer_name": "Kaiser Permanente",
+              "plan_name": "HMO",
+              "standard_charge": 500.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 500.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "CT Scan - Chest without contrast",
+        "code_information": [
+          {
+            "code": "71250",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 2400.00,
+          "discounted_cash_price": 2400.00,
+          "de_identified_minimum_negotiated_charge": 400.00,
+          "de_identified_maximum_negotiated_charge": 450.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 450.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 450.00
+            },
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 430.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 430.00
+            },
+            {
+              "payer_name": "Kaiser Permanente",
+              "plan_name": "HMO",
+              "standard_charge": 400.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 400.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "X-Ray - Chest, 2 views",
+        "code_information": [
+          {
+            "code": "71046",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 580.00,
+          "discounted_cash_price": 580.00,
+          "de_identified_minimum_negotiated_charge": 140.00,
+          "de_identified_maximum_negotiated_charge": 160.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 160.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 160.00
+            },
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 150.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 150.00
+            },
+            {
+              "payer_name": "Kaiser Permanente",
+              "plan_name": "HMO",
+              "standard_charge": 140.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 140.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "Complete Blood Count (CBC) with differential",
+        "code_information": [
+          {
+            "code": "85025",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 400.00,
+          "discounted_cash_price": 400.00,
+          "de_identified_minimum_negotiated_charge": 90.00,
+          "de_identified_maximum_negotiated_charge": 100.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 100.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 100.00
+            },
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 95.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 95.00
+            },
+            {
+              "payer_name": "Kaiser Permanente",
+              "plan_name": "HMO",
+              "standard_charge": 90.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 90.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "Ultrasound - Abdomen complete",
+        "code_information": [
+          {
+            "code": "76700",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 1500.00,
+          "discounted_cash_price": 1500.00,
+          "de_identified_minimum_negotiated_charge": 300.00,
+          "de_identified_maximum_negotiated_charge": 340.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 340.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 340.00
+            },
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 320.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 320.00
+            },
+            {
+              "payer_name": "Kaiser Permanente",
+              "plan_name": "HMO",
+              "standard_charge": 300.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 300.00
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "hospital_id": "6",
+    "hospital_name": "Long Beach Medical Center",
+    "hospital_location": "Main Campus",
+    "hospital_address": "2801 Atlantic Ave, Long Beach, CA 90806",
+    "hospital_ein": "95-000006",
+    "last_updated_on": "2025-11-08",
+    "version": "2.0.0",
+    "phone": "(562) 555-0600",
+    "coordinates": {
+      "lat": 33.80,
+      "lng": -118.19
+    },
+    "in_network_insurances": [
+      "bluecross",
+      "cigna",
+      "unitedhealthcare",
+      "humana"
+    ],
+    "affirmation": {
+      "affirmation": "To the best of its knowledge and belief, the hospital has included all applicable standard charge information in accordance with the requirements of 45 CFR 180.50, and the information encoded is accurate as of the date indicated.",
+      "confirm_affirmation": true
+    },
+    "standard_charge_information": [
+      {
+        "description": "MRI Scan - Brain without contrast",
+        "code_information": [
+          {
+            "code": "70551",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 2700.00,
+          "discounted_cash_price": 2700.00,
+          "de_identified_minimum_negotiated_charge": 460.00,
+          "de_identified_maximum_negotiated_charge": 480.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 470.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 470.00
+            },
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 460.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 460.00
+            },
+            {
+              "payer_name": "UnitedHealthcare",
+              "plan_name": "Choice Plus",
+              "standard_charge": 480.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 480.00
+            },
+            {
+              "payer_name": "Humana",
+              "plan_name": "HMO",
+              "standard_charge": 465.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 465.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "CT Scan - Chest without contrast",
+        "code_information": [
+          {
+            "code": "71250",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 2100.00,
+          "discounted_cash_price": 2100.00,
+          "de_identified_minimum_negotiated_charge": 360.00,
+          "de_identified_maximum_negotiated_charge": 380.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 370.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 370.00
+            },
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 360.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 360.00
+            },
+            {
+              "payer_name": "UnitedHealthcare",
+              "plan_name": "Choice Plus",
+              "standard_charge": 380.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 380.00
+            },
+            {
+              "payer_name": "Humana",
+              "plan_name": "HMO",
+              "standard_charge": 365.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 365.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "X-Ray - Chest, 2 views",
+        "code_information": [
+          {
+            "code": "71046",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 470.00,
+          "discounted_cash_price": 470.00,
+          "de_identified_minimum_negotiated_charge": 120.00,
+          "de_identified_maximum_negotiated_charge": 130.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 125.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 125.00
+            },
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 120.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 120.00
+            },
+            {
+              "payer_name": "UnitedHealthcare",
+              "plan_name": "Choice Plus",
+              "standard_charge": 130.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 130.00
+            },
+            {
+              "payer_name": "Humana",
+              "plan_name": "HMO",
+              "standard_charge": 123.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 123.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "Complete Blood Count (CBC) with differential",
+        "code_information": [
+          {
+            "code": "85025",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 330.00,
+          "discounted_cash_price": 330.00,
+          "de_identified_minimum_negotiated_charge": 80.00,
+          "de_identified_maximum_negotiated_charge": 85.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 82.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 82.00
+            },
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 80.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 80.00
+            },
+            {
+              "payer_name": "UnitedHealthcare",
+              "plan_name": "Choice Plus",
+              "standard_charge": 85.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 85.00
+            },
+            {
+              "payer_name": "Humana",
+              "plan_name": "HMO",
+              "standard_charge": 81.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 81.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "Ultrasound - Abdomen complete",
+        "code_information": [
+          {
+            "code": "76700",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 1250.00,
+          "discounted_cash_price": 1250.00,
+          "de_identified_minimum_negotiated_charge": 275.00,
+          "de_identified_maximum_negotiated_charge": 295.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 285.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 285.00
+            },
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 275.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 275.00
+            },
+            {
+              "payer_name": "UnitedHealthcare",
+              "plan_name": "Choice Plus",
+              "standard_charge": 295.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 295.00
+            },
+            {
+              "payer_name": "Humana",
+              "plan_name": "HMO",
+              "standard_charge": 280.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 280.00
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "hospital_id": "7",
+    "hospital_name": "Santa Monica Medical Center",
+    "hospital_location": "Main Campus",
+    "hospital_address": "1250 16th St, Santa Monica, CA 90404",
+    "hospital_ein": "95-000007",
+    "last_updated_on": "2025-11-08",
+    "version": "2.0.0",
+    "phone": "(310) 555-0700",
+    "coordinates": {
+      "lat": 34.02,
+      "lng": -118.49
+    },
+    "in_network_insurances": [
+      "bluecross",
+      "aetna",
+      "cigna",
+      "unitedhealthcare",
+      "kaiser"
+    ],
+    "affirmation": {
+      "affirmation": "To the best of its knowledge and belief, the hospital has included all applicable standard charge information in accordance with the requirements of 45 CFR 180.50, and the information encoded is accurate as of the date indicated.",
+      "confirm_affirmation": true
+    },
+    "standard_charge_information": [
+      {
+        "description": "MRI Scan - Brain without contrast",
+        "code_information": [
+          {
+            "code": "70551",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 3100.00,
+          "discounted_cash_price": 3100.00,
+          "de_identified_minimum_negotiated_charge": 460.00,
+          "de_identified_maximum_negotiated_charge": 500.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 490.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 490.00
+            },
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 470.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 470.00
+            },
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 480.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 480.00
+            },
+            {
+              "payer_name": "UnitedHealthcare",
+              "plan_name": "Choice Plus",
+              "standard_charge": 500.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 500.00
+            },
+            {
+              "payer_name": "Kaiser Permanente",
+              "plan_name": "HMO",
+              "standard_charge": 460.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 460.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "CT Scan - Chest without contrast",
+        "code_information": [
+          {
+            "code": "71250",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 2400.00,
+          "discounted_cash_price": 2400.00,
+          "de_identified_minimum_negotiated_charge": 360.00,
+          "de_identified_maximum_negotiated_charge": 400.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 390.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 390.00
+            },
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 370.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 370.00
+            },
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 380.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 380.00
+            },
+            {
+              "payer_name": "UnitedHealthcare",
+              "plan_name": "Choice Plus",
+              "standard_charge": 400.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 400.00
+            },
+            {
+              "payer_name": "Kaiser Permanente",
+              "plan_name": "HMO",
+              "standard_charge": 360.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 360.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "X-Ray - Chest, 2 views",
+        "code_information": [
+          {
+            "code": "71046",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 520.00,
+          "discounted_cash_price": 520.00,
+          "de_identified_minimum_negotiated_charge": 120.00,
+          "de_identified_maximum_negotiated_charge": 140.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 135.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 135.00
+            },
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 125.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 125.00
+            },
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 130.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 130.00
+            },
+            {
+              "payer_name": "UnitedHealthcare",
+              "plan_name": "Choice Plus",
+              "standard_charge": 140.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 140.00
+            },
+            {
+              "payer_name": "Kaiser Permanente",
+              "plan_name": "HMO",
+              "standard_charge": 120.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 120.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "Complete Blood Count (CBC) with differential",
+        "code_information": [
+          {
+            "code": "85025",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 370.00,
+          "discounted_cash_price": 370.00,
+          "de_identified_minimum_negotiated_charge": 80.00,
+          "de_identified_maximum_negotiated_charge": 90.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 88.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 88.00
+            },
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 83.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 83.00
+            },
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 85.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 85.00
+            },
+            {
+              "payer_name": "UnitedHealthcare",
+              "plan_name": "Choice Plus",
+              "standard_charge": 90.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 90.00
+            },
+            {
+              "payer_name": "Kaiser Permanente",
+              "plan_name": "HMO",
+              "standard_charge": 80.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 80.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "Ultrasound - Abdomen complete",
+        "code_information": [
+          {
+            "code": "76700",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 1380.00,
+          "discounted_cash_price": 1380.00,
+          "de_identified_minimum_negotiated_charge": 265.00,
+          "de_identified_maximum_negotiated_charge": 305.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 295.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 295.00
+            },
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 275.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 275.00
+            },
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 285.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 285.00
+            },
+            {
+              "payer_name": "UnitedHealthcare",
+              "plan_name": "Choice Plus",
+              "standard_charge": 305.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 305.00
+            },
+            {
+              "payer_name": "Kaiser Permanente",
+              "plan_name": "HMO",
+              "standard_charge": 265.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 265.00
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "hospital_id": "8",
+    "hospital_name": "Pasadena Community Hospital",
+    "hospital_location": "Main Campus",
+    "hospital_address": "100 W California Blvd, Pasadena, CA 91105",
+    "hospital_ein": "95-000008",
+    "last_updated_on": "2025-11-08",
+    "version": "2.0.0",
+    "phone": "(626) 555-0800",
+    "coordinates": {
+      "lat": 34.15,
+      "lng": -118.14
+    },
+    "in_network_insurances": [
+      "aetna",
+      "cigna",
+      "humana",
+      "kaiser"
+    ],
+    "affirmation": {
+      "affirmation": "To the best of its knowledge and belief, the hospital has included all applicable standard charge information in accordance with the requirements of 45 CFR 180.50, and the information encoded is accurate as of the date indicated.",
+      "confirm_affirmation": true
+    },
+    "standard_charge_information": [
+      {
+        "description": "MRI Scan - Brain without contrast",
+        "code_information": [
+          {
+            "code": "70551",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 2950.00,
+          "discounted_cash_price": 2950.00,
+          "de_identified_minimum_negotiated_charge": 485.00,
+          "de_identified_maximum_negotiated_charge": 510.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 510.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 510.00
+            },
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 500.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 500.00
+            },
+            {
+              "payer_name": "Humana",
+              "plan_name": "HMO",
+              "standard_charge": 505.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 505.00
+            },
+            {
+              "payer_name": "Kaiser Permanente",
+              "plan_name": "HMO",
+              "standard_charge": 485.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 485.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "CT Scan - Chest without contrast",
+        "code_information": [
+          {
+            "code": "71250",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 2250.00,
+          "discounted_cash_price": 2250.00,
+          "de_identified_minimum_negotiated_charge": 385.00,
+          "de_identified_maximum_negotiated_charge": 410.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 410.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 410.00
+            },
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 400.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 400.00
+            },
+            {
+              "payer_name": "Humana",
+              "plan_name": "HMO",
+              "standard_charge": 405.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 405.00
+            },
+            {
+              "payer_name": "Kaiser Permanente",
+              "plan_name": "HMO",
+              "standard_charge": 385.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 385.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "X-Ray - Chest, 2 views",
+        "code_information": [
+          {
+            "code": "71046",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 510.00,
+          "discounted_cash_price": 510.00,
+          "de_identified_minimum_negotiated_charge": 135.00,
+          "de_identified_maximum_negotiated_charge": 145.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 145.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 145.00
+            },
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 140.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 140.00
+            },
+            {
+              "payer_name": "Humana",
+              "plan_name": "HMO",
+              "standard_charge": 142.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 142.00
+            },
+            {
+              "payer_name": "Kaiser Permanente",
+              "plan_name": "HMO",
+              "standard_charge": 135.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 135.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "Complete Blood Count (CBC) with differential",
+        "code_information": [
+          {
+            "code": "85025",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 360.00,
+          "discounted_cash_price": 360.00,
+          "de_identified_minimum_negotiated_charge": 87.00,
+          "de_identified_maximum_negotiated_charge": 92.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 92.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 92.00
+            },
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 90.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 90.00
+            },
+            {
+              "payer_name": "Humana",
+              "plan_name": "HMO",
+              "standard_charge": 91.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 91.00
+            },
+            {
+              "payer_name": "Kaiser Permanente",
+              "plan_name": "HMO",
+              "standard_charge": 87.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 87.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "Ultrasound - Abdomen complete",
+        "code_information": [
+          {
+            "code": "76700",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 1320.00,
+          "discounted_cash_price": 1320.00,
+          "de_identified_minimum_negotiated_charge": 290.00,
+          "de_identified_maximum_negotiated_charge": 310.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 310.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 310.00
+            },
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 300.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 300.00
+            },
+            {
+              "payer_name": "Humana",
+              "plan_name": "HMO",
+              "standard_charge": 305.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 305.00
+            },
+            {
+              "payer_name": "Kaiser Permanente",
+              "plan_name": "HMO",
+              "standard_charge": 290.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 290.00
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "hospital_id": "9",
+    "hospital_name": "Glendale Adventist Medical Center",
+    "hospital_location": "Main Campus",
+    "hospital_address": "1509 Wilson Ter, Glendale, CA 91206",
+    "hospital_ein": "95-000009",
+    "last_updated_on": "2025-11-08",
+    "version": "2.0.0",
+    "phone": "(818) 555-0900",
+    "coordinates": {
+      "lat": 34.14,
+      "lng": -118.26
+    },
+    "in_network_insurances": [
+      "bluecross",
+      "aetna",
+      "unitedhealthcare"
+    ],
+    "affirmation": {
+      "affirmation": "To the best of its knowledge and belief, the hospital has included all applicable standard charge information in accordance with the requirements of 45 CFR 180.50, and the information encoded is accurate as of the date indicated.",
+      "confirm_affirmation": true
+    },
+    "standard_charge_information": [
+      {
+        "description": "MRI Scan - Brain without contrast",
+        "code_information": [
+          {
+            "code": "70551",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 3050.00,
+          "discounted_cash_price": 3050.00,
+          "de_identified_minimum_negotiated_charge": 510.00,
+          "de_identified_maximum_negotiated_charge": 540.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 530.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 530.00
+            },
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 510.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 510.00
+            },
+            {
+              "payer_name": "UnitedHealthcare",
+              "plan_name": "Choice Plus",
+              "standard_charge": 540.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 540.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "CT Scan - Chest without contrast",
+        "code_information": [
+          {
+            "code": "71250",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 2350.00,
+          "discounted_cash_price": 2350.00,
+          "de_identified_minimum_negotiated_charge": 410.00,
+          "de_identified_maximum_negotiated_charge": 440.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 430.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 430.00
+            },
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 410.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 410.00
+            },
+            {
+              "payer_name": "UnitedHealthcare",
+              "plan_name": "Choice Plus",
+              "standard_charge": 440.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 440.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "X-Ray - Chest, 2 views",
+        "code_information": [
+          {
+            "code": "71046",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 540.00,
+          "discounted_cash_price": 540.00,
+          "de_identified_minimum_negotiated_charge": 140.00,
+          "de_identified_maximum_negotiated_charge": 155.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 150.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 150.00
+            },
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 140.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 140.00
+            },
+            {
+              "payer_name": "UnitedHealthcare",
+              "plan_name": "Choice Plus",
+              "standard_charge": 155.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 155.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "Complete Blood Count (CBC) with differential",
+        "code_information": [
+          {
+            "code": "85025",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 380.00,
+          "discounted_cash_price": 380.00,
+          "de_identified_minimum_negotiated_charge": 90.00,
+          "de_identified_maximum_negotiated_charge": 98.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 95.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 95.00
+            },
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 90.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 90.00
+            },
+            {
+              "payer_name": "UnitedHealthcare",
+              "plan_name": "Choice Plus",
+              "standard_charge": 98.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 98.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "Ultrasound - Abdomen complete",
+        "code_information": [
+          {
+            "code": "76700",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 1420.00,
+          "discounted_cash_price": 1420.00,
+          "de_identified_minimum_negotiated_charge": 300.00,
+          "de_identified_maximum_negotiated_charge": 330.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 320.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 320.00
+            },
+            {
+              "payer_name": "Aetna",
+              "plan_name": "Standard",
+              "standard_charge": 300.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 300.00
+            },
+            {
+              "payer_name": "UnitedHealthcare",
+              "plan_name": "Choice Plus",
+              "standard_charge": 330.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 330.00
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "hospital_id": "10",
+    "hospital_name": "Burbank Regional Medical",
+    "hospital_location": "Main Campus",
+    "hospital_address": "501 S Buena Vista St, Burbank, CA 91505",
+    "hospital_ein": "95-000010",
+    "last_updated_on": "2025-11-08",
+    "version": "2.0.0",
+    "phone": "(818) 555-1000",
+    "coordinates": {
+      "lat": 34.18,
+      "lng": -118.31
+    },
+    "in_network_insurances": [
+      "bluecross",
+      "cigna",
+      "humana",
+      "kaiser"
+    ],
+    "affirmation": {
+      "affirmation": "To the best of its knowledge and belief, the hospital has included all applicable standard charge information in accordance with the requirements of 45 CFR 180.50, and the information encoded is accurate as of the date indicated.",
+      "confirm_affirmation": true
+    },
+    "standard_charge_information": [
+      {
+        "description": "MRI Scan - Brain without contrast",
+        "code_information": [
+          {
+            "code": "70551",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 2750.00,
+          "discounted_cash_price": 2750.00,
+          "de_identified_minimum_negotiated_charge": 455.00,
+          "de_identified_maximum_negotiated_charge": 480.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 480.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 480.00
+            },
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 470.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 470.00
+            },
+            {
+              "payer_name": "Humana",
+              "plan_name": "HMO",
+              "standard_charge": 475.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 475.00
+            },
+            {
+              "payer_name": "Kaiser Permanente",
+              "plan_name": "HMO",
+              "standard_charge": 455.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 455.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "CT Scan - Chest without contrast",
+        "code_information": [
+          {
+            "code": "71250",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 2150.00,
+          "discounted_cash_price": 2150.00,
+          "de_identified_minimum_negotiated_charge": 355.00,
+          "de_identified_maximum_negotiated_charge": 380.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 380.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 380.00
+            },
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 370.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 370.00
+            },
+            {
+              "payer_name": "Humana",
+              "plan_name": "HMO",
+              "standard_charge": 375.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 375.00
+            },
+            {
+              "payer_name": "Kaiser Permanente",
+              "plan_name": "HMO",
+              "standard_charge": 355.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 355.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "X-Ray - Chest, 2 views",
+        "code_information": [
+          {
+            "code": "71046",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 480.00,
+          "discounted_cash_price": 480.00,
+          "de_identified_minimum_negotiated_charge": 120.00,
+          "de_identified_maximum_negotiated_charge": 130.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 130.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 130.00
+            },
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 125.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 125.00
+            },
+            {
+              "payer_name": "Humana",
+              "plan_name": "HMO",
+              "standard_charge": 128.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 128.00
+            },
+            {
+              "payer_name": "Kaiser Permanente",
+              "plan_name": "HMO",
+              "standard_charge": 120.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 120.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "Complete Blood Count (CBC) with differential",
+        "code_information": [
+          {
+            "code": "85025",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 340.00,
+          "discounted_cash_price": 340.00,
+          "de_identified_minimum_negotiated_charge": 80.00,
+          "de_identified_maximum_negotiated_charge": 85.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 85.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 85.00
+            },
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 83.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 83.00
+            },
+            {
+              "payer_name": "Humana",
+              "plan_name": "HMO",
+              "standard_charge": 84.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 84.00
+            },
+            {
+              "payer_name": "Kaiser Permanente",
+              "plan_name": "HMO",
+              "standard_charge": 80.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 80.00
+            }
+          ]
+        }
+      },
+      {
+        "description": "Ultrasound - Abdomen complete",
+        "code_information": [
+          {
+            "code": "76700",
+            "type": "CPT"
+          }
+        ],
+        "setting": "outpatient",
+        "modifiers": [],
+        "drug_unit_of_measurement": "",
+        "drug_type_of_measurement": "",
+        "standard_charges": {
+          "gross_charge": 1280.00,
+          "discounted_cash_price": 1280.00,
+          "de_identified_minimum_negotiated_charge": 270.00,
+          "de_identified_maximum_negotiated_charge": 290.00,
+          "payer_specific_negotiated_charges": [
+            {
+              "payer_name": "Blue Cross Blue Shield",
+              "plan_name": "PPO",
+              "standard_charge": 290.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 290.00
+            },
+            {
+              "payer_name": "Cigna",
+              "plan_name": "PPO",
+              "standard_charge": 280.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 280.00
+            },
+            {
+              "payer_name": "Humana",
+              "plan_name": "HMO",
+              "standard_charge": 285.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 285.00
+            },
+            {
+              "payer_name": "Kaiser Permanente",
+              "plan_name": "HMO",
+              "standard_charge": 270.00,
+              "standard_charge_methodology": "fee schedule",
+              "estimated_allowed_amount": 270.00
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

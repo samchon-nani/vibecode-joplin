@@ -1,0 +1,13 @@
+{
+  "90210": { "lat": 34.0736, "lng": -118.4004, "city": "Beverly Hills", "state": "CA" },
+  "90033": { "lat": 34.0522, "lng": -118.2437, "city": "Los Angeles", "state": "CA" },
+  "92868": { "lat": 33.7879, "lng": -117.8531, "city": "Orange", "state": "CA" },
+  "92103": { "lat": 32.7157, "lng": -117.1611, "city": "San Diego", "state": "CA" },
+  "92501": { "lat": 33.9533, "lng": -117.3962, "city": "Riverside", "state": "CA" },
+  "90806": { "lat": 33.8044, "lng": -118.1950, "city": "Long Beach", "state": "CA" },
+  "90404": { "lat": 34.0195, "lng": -118.4912, "city": "Santa Monica", "state": "CA" },
+  "91105": { "lat": 34.1478, "lng": -118.1445, "city": "Pasadena", "state": "CA" },
+  "91206": { "lat": 34.1425, "lng": -118.2551, "city": "Glendale", "state": "CA" },
+  "91505": { "lat": 34.1808, "lng": -118.3090, "city": "Burbank", "state": "CA" }
+}
+

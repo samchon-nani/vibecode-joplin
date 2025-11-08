@@ -1,0 +1,260 @@
+[
+  {
+    "id": "bluecross",
+    "name": "BlueCross BlueShield",
+    "type": "PPO",
+    "plans": [
+      {
+        "id": "bluecross-basic",
+        "name": "Basic Plan",
+        "description": "Affordable coverage with standard benefits",
+        "benefits": {
+          "deductible": 2000,
+          "copay": 50,
+          "coinsurance": 20,
+          "outOfPocketMax": 6000
+        },
+        "networkType": "both"
+      },
+      {
+        "id": "bluecross-premium",
+        "name": "Premium Plan",
+        "description": "Comprehensive coverage with lower out-of-pocket costs",
+        "benefits": {
+          "deductible": 1000,
+          "copay": 25,
+          "coinsurance": 15,
+          "outOfPocketMax": 4000
+        },
+        "networkType": "both"
+      },
+      {
+        "id": "bluecross-gold",
+        "name": "Gold Plan",
+        "description": "Premium coverage with minimal out-of-pocket costs",
+        "benefits": {
+          "deductible": 500,
+          "copay": 15,
+          "coinsurance": 10,
+          "outOfPocketMax": 3000
+        },
+        "networkType": "both"
+      }
+    ]
+  },
+  {
+    "id": "aetna",
+    "name": "Aetna",
+    "type": "PPO",
+    "plans": [
+      {
+        "id": "aetna-select",
+        "name": "Select Plan",
+        "description": "Budget-friendly option with essential coverage",
+        "benefits": {
+          "deductible": 2500,
+          "copay": 60,
+          "coinsurance": 25,
+          "outOfPocketMax": 7000
+        },
+        "networkType": "both"
+      },
+      {
+        "id": "aetna-choice",
+        "name": "Choice Plan",
+        "description": "Balanced coverage with moderate costs",
+        "benefits": {
+          "deductible": 1500,
+          "copay": 35,
+          "coinsurance": 18,
+          "outOfPocketMax": 5000
+        },
+        "networkType": "both"
+      },
+      {
+        "id": "aetna-advantage",
+        "name": "Advantage Plan",
+        "description": "Enhanced coverage with better benefits",
+        "benefits": {
+          "deductible": 750,
+          "copay": 20,
+          "coinsurance": 12,
+          "outOfPocketMax": 3500
+        },
+        "networkType": "both"
+      }
+    ]
+  },
+  {
+    "id": "cigna",
+    "name": "Cigna",
+    "type": "PPO",
+    "plans": [
+      {
+        "id": "cigna-core",
+        "name": "Core Plan",
+        "description": "Essential coverage at an affordable price",
+        "benefits": {
+          "deductible": 2200,
+          "copay": 55,
+          "coinsurance": 22,
+          "outOfPocketMax": 6500
+        },
+        "networkType": "both"
+      },
+      {
+        "id": "cigna-plus",
+        "name": "Plus Plan",
+        "description": "Enhanced benefits with better coverage",
+        "benefits": {
+          "deductible": 1200,
+          "copay": 30,
+          "coinsurance": 16,
+          "outOfPocketMax": 4500
+        },
+        "networkType": "both"
+      },
+      {
+        "id": "cigna-elite",
+        "name": "Elite Plan",
+        "description": "Premium coverage with comprehensive benefits",
+        "benefits": {
+          "deductible": 600,
+          "copay": 18,
+          "coinsurance": 11,
+          "outOfPocketMax": 3200
+        },
+        "networkType": "both"
+      }
+    ]
+  },
+  {
+    "id": "unitedhealthcare",
+    "name": "UnitedHealthcare",
+    "type": "PPO",
+    "plans": [
+      {
+        "id": "unitedhealthcare-essential",
+        "name": "Essential Plan",
+        "description": "Basic coverage for essential healthcare needs",
+        "benefits": {
+          "deductible": 2400,
+          "copay": 65,
+          "coinsurance": 24,
+          "outOfPocketMax": 7200
+        },
+        "networkType": "both"
+      },
+      {
+        "id": "unitedhealthcare-advantage",
+        "name": "Advantage Plan",
+        "description": "Comprehensive coverage with competitive benefits",
+        "benefits": {
+          "deductible": 1300,
+          "copay": 40,
+          "coinsurance": 17,
+          "outOfPocketMax": 4800
+        },
+        "networkType": "both"
+      },
+      {
+        "id": "unitedhealthcare-premier",
+        "name": "Premier Plan",
+        "description": "Top-tier coverage with minimal out-of-pocket costs",
+        "benefits": {
+          "deductible": 650,
+          "copay": 22,
+          "coinsurance": 13,
+          "outOfPocketMax": 3400
+        },
+        "networkType": "both"
+      }
+    ]
+  },
+  {
+    "id": "humana",
+    "name": "Humana",
+    "type": "HMO",
+    "plans": [
+      {
+        "id": "humana-value",
+        "name": "Value Plan",
+        "description": "Affordable HMO coverage with primary care focus",
+        "benefits": {
+          "deductible": 1500,
+          "copay": 30,
+          "coinsurance": 0,
+          "outOfPocketMax": 5000
+        },
+        "networkType": "in-network"
+      },
+      {
+        "id": "humana-choice",
+        "name": "Choice Plan",
+        "description": "Flexible HMO with better coverage options",
+        "benefits": {
+          "deductible": 800,
+          "copay": 20,
+          "coinsurance": 0,
+          "outOfPocketMax": 3500
+        },
+        "networkType": "in-network"
+      },
+      {
+        "id": "humana-premier",
+        "name": "Premier Plan",
+        "description": "Comprehensive HMO with extensive coverage",
+        "benefits": {
+          "deductible": 400,
+          "copay": 15,
+          "coinsurance": 0,
+          "outOfPocketMax": 2500
+        },
+        "networkType": "in-network"
+      }
+    ]
+  },
+  {
+    "id": "kaiser",
+    "name": "Kaiser Permanente",
+    "type": "HMO",
+    "plans": [
+      {
+        "id": "kaiser-basic",
+        "name": "Basic Plan",
+        "description": "Essential Kaiser coverage with integrated care",
+        "benefits": {
+          "deductible": 1200,
+          "copay": 25,
+          "coinsurance": 0,
+          "outOfPocketMax": 4500
+        },
+        "networkType": "in-network"
+      },
+      {
+        "id": "kaiser-enhanced",
+        "name": "Enhanced Plan",
+        "description": "Better coverage with lower costs",
+        "benefits": {
+          "deductible": 600,
+          "copay": 18,
+          "coinsurance": 0,
+          "outOfPocketMax": 3000
+        },
+        "networkType": "in-network"
+      },
+      {
+        "id": "kaiser-premium",
+        "name": "Premium Plan",
+        "description": "Comprehensive Kaiser coverage with minimal costs",
+        "benefits": {
+          "deductible": 300,
+          "copay": 12,
+          "coinsurance": 0,
+          "outOfPocketMax": 2000
+        },
+        "networkType": "in-network"
+      }
+    ]
+  }
+]
