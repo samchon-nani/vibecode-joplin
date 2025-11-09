@@ -4,7 +4,7 @@ import insurancesData from '@/data/insurances.json';
 import hospitalsData from '@/data/hospitals.json';
 import zipCodesData from '@/data/zipCodes.json';
 import { calculateDistance, parseLocation } from '@/lib/utils';
-import { Hospital, SearchResult, Insurance, InsurancePlan } from '@/lib/types';
+import { Hospital, SearchResult, Insurance, InsurancePlan, ProcedurePrice } from '@/lib/types';
 import { convertHospitalToLegacyFormat, findProcedureInHospital } from '@/lib/hospital-utils';
 
 /**
@@ -74,12 +74,13 @@ function parseAIQuery(query: string): {
     '76700': 'Ultrasound',
   };
   
-  // Search for CPT codes (5-digit numbers)
-  const cptCodeMatch = query.match(/\b(\d{5})\b/);
-  if (cptCodeMatch) {
-    const code = cptCodeMatch[1];
-    if (cptCodeMap[code]) {
-      procedures.push(cptCodeMap[code]);
+  // Search for multiple CPT codes (5-digit numbers)
+  const cptCodeMatches = query.match(/\b(\d{5})\b/g);
+  if (cptCodeMatches) {
+    for (const code of cptCodeMatches) {
+      if (cptCodeMap[code] && !procedures.includes(cptCodeMap[code])) {
+        procedures.push(cptCodeMap[code]);
+      }
     }
   }
   
@@ -92,11 +93,39 @@ function parseAIQuery(query: string): {
     }
   }
   
-  // Then check for procedure name keywords
+  // Then check for procedure name keywords (can match multiple)
   for (const [keyword, procedureId] of Object.entries(procedureKeywords)) {
     if (lowerQuery.includes(keyword)) {
       if (!procedures.includes(procedureId)) {
         procedures.push(procedureId);
+      }
+    }
+  }
+  
+  // Check for common multiple procedure patterns like "and", "plus", ","
+  const multiplePatterns = [
+    /\b(?:and|plus|with|,)\b/i,
+  ];
+  
+  // If we find multiple procedure keywords, try to extract all
+  const andMatch = lowerQuery.match(/\b(?:and|plus|with)\b/i);
+  if (andMatch) {
+    // Split query by "and", "plus", "with" and check each part
+    const parts = lowerQuery.split(/\b(?:and|plus|with)\b/i);
+    for (const part of parts) {
+      for (const [keyword, procedureId] of Object.entries(procedureKeywords)) {
+        if (part.includes(keyword) && !procedures.includes(procedureId)) {
+          procedures.push(procedureId);
+        }
+      }
+      // Check for CPT codes in each part
+      const partCptMatches = part.match(/\b(\d{5})\b/g);
+      if (partCptMatches) {
+        for (const code of partCptMatches) {
+          if (cptCodeMap[code] && !procedures.includes(cptCodeMap[code])) {
+            procedures.push(cptCodeMap[code]);
+          }
+        }
       }
     }
   }
@@ -335,45 +364,54 @@ export async function POST(request: NextRequest) {
     const results: SearchResult[] = [];
     const insurances = insurancesData as Insurance[];
 
-    // Search for each procedure
-    for (const procedure of parsed.procedures) {
-      for (const hospital of hospitals) {
-        // Convert hospital to legacy format if needed
-        const legacyHospital = convertHospitalToLegacyFormat(hospital);
-        
+    // Process hospitals - check if they offer all requested procedures
+    for (const hospital of hospitals) {
+      // Convert hospital to legacy format if needed
+      const legacyHospital = convertHospitalToLegacyFormat(hospital);
+      
+      // Calculate distance
+      const distance = calculateDistance(
+        userLocation.lat,
+        userLocation.lng,
+        hospital.coordinates.lat,
+        hospital.coordinates.lng
+      );
+
+      // Filter by max distance
+      if (distance > parsed.maxDistance) {
+        continue;
+      }
+
+      // Check if in network (only if not explicitly no insurance)
+      const inNetworkInsurances = hospital.in_network_insurances || hospital.inNetworkInsurances || [];
+      const inNetwork = (!parsed.explicitlyNoInsurance && insurance)
+        ? inNetworkInsurances.includes(insurance)
+        : false;
+
+      // Process each procedure and calculate totals
+      const procedurePrices: ProcedurePrice[] = [];
+      let totalPriceWithInsurance: number | null = null;
+      let totalPriceWithoutInsurance = 0;
+      let selectedPlan: InsurancePlan | undefined = undefined;
+      let hospitalHasAllProcedures = true;
+
+      for (const procedure of parsed.procedures) {
         // Check if hospital offers this procedure
         const procedureData = findProcedureInHospital(hospital, procedure);
         if (!procedureData) {
-          continue;
+          hospitalHasAllProcedures = false;
+          break; // Hospital doesn't offer all procedures
         }
 
-        // Calculate distance
-        const distance = calculateDistance(
-          userLocation.lat,
-          userLocation.lng,
-          hospital.coordinates.lat,
-          hospital.coordinates.lng
-        );
+        const procInfo = proceduresData.find(p => p.id === procedure);
+        const procName = procInfo?.name || procedure;
 
-        // Filter by max distance
-        if (distance > parsed.maxDistance) {
-          continue;
-        }
-
-        // Check if in network (only if not explicitly no insurance)
-        const inNetworkInsurances = hospital.in_network_insurances || hospital.inNetworkInsurances || [];
-        const inNetwork = (!parsed.explicitlyNoInsurance && insurance)
-          ? inNetworkInsurances.includes(insurance)
-          : false;
-
-        // Get prices
-        let priceWithInsurance: number | null = null;
-        let selectedPlan: InsurancePlan | undefined = undefined;
+        // Get prices for this procedure
+        let procPriceWithInsurance: number | null = null;
         
         // If user explicitly said no insurance, always set priceWithInsurance to null
         if (parsed.explicitlyNoInsurance) {
-          priceWithInsurance = null;
-          selectedPlan = undefined;
+          procPriceWithInsurance = null;
         } else if (insurance && inNetwork) {
           // Only calculate insurance prices if not explicitly no insurance
           if (insurancePlan) {
@@ -382,34 +420,48 @@ export async function POST(request: NextRequest) {
             
             if (selectedPlan) {
               const basePrice = procedureData.withInsurance[insurance] || procedureData.withoutInsurance;
-              priceWithInsurance = calculatePriceWithPlan(basePrice, selectedPlan);
+              procPriceWithInsurance = calculatePriceWithPlan(basePrice, selectedPlan);
             } else {
-              priceWithInsurance = procedureData.withInsurance[insurance] || null;
+              procPriceWithInsurance = procedureData.withInsurance[insurance] || null;
             }
           } else {
-            priceWithInsurance = procedureData.withInsurance[insurance] || null;
+            procPriceWithInsurance = procedureData.withInsurance[insurance] || null;
           }
         }
         
-        const priceWithoutInsurance = procedureData.withoutInsurance;
+        const procPriceWithoutInsurance = procedureData.withoutInsurance;
 
-        // Check if we already have this hospital for another procedure
-        const existingResult = results.find(r => r.hospital.id === legacyHospital.id);
-        if (existingResult) {
-          // Add this procedure to the existing result (we'll handle multiple procedures in the UI)
-          // For now, we'll keep the first procedure's price
-          continue;
-        }
-
-        results.push({
-          hospital: legacyHospital as Hospital,
-          distance,
-          inNetwork,
-          priceWithInsurance,
-          priceWithoutInsurance,
-          insurancePlan: selectedPlan,
+        // Add to procedure breakdown
+        procedurePrices.push({
+          procedureId: procedure,
+          procedureName: procName,
+          priceWithInsurance: procPriceWithInsurance,
+          priceWithoutInsurance: procPriceWithoutInsurance,
         });
+
+        // Accumulate totals
+        if (procPriceWithInsurance !== null) {
+          totalPriceWithInsurance = (totalPriceWithInsurance || 0) + procPriceWithInsurance;
+        }
+        totalPriceWithoutInsurance += procPriceWithoutInsurance;
       }
+
+      // Only add hospital if it offers all requested procedures
+      if (!hospitalHasAllProcedures) {
+        continue;
+      }
+
+      results.push({
+        hospital: legacyHospital as Hospital,
+        distance,
+        inNetwork,
+        priceWithInsurance: totalPriceWithInsurance,
+        priceWithoutInsurance: totalPriceWithoutInsurance,
+        insurancePlan: selectedPlan,
+        procedures: parsed.procedures.length > 1 ? procedurePrices : undefined,
+        totalPriceWithInsurance: totalPriceWithInsurance,
+        totalPriceWithoutInsurance: totalPriceWithoutInsurance,
+      });
     }
 
     // Sort by cash price (lowest first) if explicitly no insurance, otherwise by distance

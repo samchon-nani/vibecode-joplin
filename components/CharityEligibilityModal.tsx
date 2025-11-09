@@ -17,6 +17,12 @@ interface PriceExplanationModalProps {
   priceWithoutInsurance: number;
   insuranceType?: string;
   insurancePlan?: InsurancePlan;
+  procedures?: Array<{
+    procedureId: string;
+    procedureName: string;
+    priceWithInsurance: number | null;
+    priceWithoutInsurance: number;
+  }>;
 }
 
 export default function CharityEligibilityModal({
@@ -30,6 +36,7 @@ export default function CharityEligibilityModal({
   priceWithoutInsurance,
   insuranceType,
   insurancePlan,
+  procedures,
 }: PriceExplanationModalProps) {
   const [mounted, setMounted] = useState(false);
   
@@ -181,7 +188,25 @@ export default function CharityEligibilityModal({
                 <div className="price-label">Full Cash Price</div>
                 <div className="price-value no-insurance">
                   ${costWithoutInsurance.total.toLocaleString()}
+                  {procedures && procedures.length > 1 && (
+                    <span className="total-badge-modal">Total</span>
+                  )}
                 </div>
+                {procedures && procedures.length > 1 && (
+                  <div className="procedure-breakdown-modal">
+                    <div className="breakdown-header-modal">Cost Breakdown by Procedure:</div>
+                    {procedures.map((proc) => (
+                      <div key={proc.procedureId} className="breakdown-item-modal">
+                        <span className="breakdown-procedure-modal">{proc.procedureName}:</span>
+                        <span className="breakdown-price-modal">${proc.priceWithoutInsurance.toLocaleString()}</span>
+                      </div>
+                    ))}
+                    <div className="breakdown-total-modal">
+                      <span className="breakdown-label-modal">Total:</span>
+                      <span className="breakdown-price-total-modal">${costWithoutInsurance.total.toLocaleString()}</span>
+                    </div>
+                  </div>
+                )}
                 <div className="price-note">This is the total amount you would pay if paying out of pocket</div>
               </div>
             </div>

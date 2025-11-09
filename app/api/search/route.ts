@@ -3,7 +3,8 @@ import hospitalsData from '@/data/hospitals.json';
 import zipCodesData from '@/data/zipCodes.json';
 import insurancesData from '@/data/insurances.json';
 import { calculateDistance, parseLocation } from '@/lib/utils';
-import { Hospital, SearchResult, Insurance, InsurancePlan } from '@/lib/types';
+import { Hospital, SearchResult, Insurance, InsurancePlan, ProcedurePrice } from '@/lib/types';
+import proceduresData from '@/data/procedures.json';
 import { convertHospitalToLegacyFormat, findProcedureInHospital } from '@/lib/hospital-utils';
 
 /**
@@ -45,9 +46,17 @@ function calculatePriceWithPlan(basePrice: number, plan: InsurancePlan): number 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { procedure, location, insurance, insurancePlan, maxDistance } = body;
+    const { procedure, procedures: proceduresArray, location, insurance, insurancePlan, maxDistance } = body;
 
-    if (!procedure || !location || !maxDistance) {
+    // Parse procedures - support both comma-separated string and array
+    let procedureList: string[] = [];
+    if (proceduresArray && Array.isArray(proceduresArray)) {
+      procedureList = proceduresArray;
+    } else if (procedure) {
+      procedureList = procedure.includes(',') ? procedure.split(',').map(p => p.trim()) : [procedure];
+    }
+
+    if (procedureList.length === 0 || !location || !maxDistance) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
@@ -65,18 +74,13 @@ export async function POST(request: NextRequest) {
 
     const hospitals = hospitalsData as any[];
     const results: SearchResult[] = [];
+    const insurances = insurancesData as Insurance[];
 
     // Filter hospitals by distance and procedure availability
     for (const hospital of hospitals) {
       // Convert hospital to legacy format if needed
       const legacyHospital = convertHospitalToLegacyFormat(hospital);
       
-      // Check if hospital offers this procedure
-      const procedureData = findProcedureInHospital(hospital, procedure);
-      if (!procedureData) {
-        continue;
-      }
-
       // Calculate distance
       const distance = calculateDistance(
         userLocation.lat,
@@ -96,40 +100,74 @@ export async function POST(request: NextRequest) {
         ? inNetworkInsurances.includes(insurance)
         : false;
 
-      // Get prices
-      let priceWithInsurance: number | null = null;
+      // Process each procedure
+      const procedurePrices: ProcedurePrice[] = [];
+      let totalPriceWithInsurance: number | null = null;
+      let totalPriceWithoutInsurance = 0;
       let selectedPlan: InsurancePlan | undefined = undefined;
-      
-      if (insurance && inNetwork) {
-        // If a specific plan is selected, calculate price based on plan benefits
-        if (insurancePlan) {
-          const insurances = insurancesData as Insurance[];
-          const selectedInsurance = insurances.find((ins) => ins.id === insurance);
-          selectedPlan = selectedInsurance?.plans.find((plan) => plan.id === insurancePlan);
-          
-          if (selectedPlan) {
-            // Calculate price based on plan benefits
-            const basePrice = procedureData.withInsurance[insurance] || procedureData.withoutInsurance;
-            priceWithInsurance = calculatePriceWithPlan(basePrice, selectedPlan);
-          } else {
-            // Fallback to default insurance price
-            priceWithInsurance = procedureData.withInsurance[insurance] || null;
-          }
-        } else {
-          // Use default insurance price
-          priceWithInsurance = procedureData.withInsurance[insurance] || null;
+      let hospitalHasAllProcedures = true;
+
+      for (const procId of procedureList) {
+        const procedureData = findProcedureInHospital(hospital, procId);
+        if (!procedureData) {
+          hospitalHasAllProcedures = false;
+          break; // Hospital doesn't offer all procedures
         }
+
+        const procInfo = proceduresData.find(p => p.id === procId);
+        const procName = procInfo?.name || procId;
+
+        // Get prices for this procedure
+        let procPriceWithInsurance: number | null = null;
+        
+        if (insurance && inNetwork) {
+          if (insurancePlan) {
+            const selectedInsurance = insurances.find((ins) => ins.id === insurance);
+            selectedPlan = selectedInsurance?.plans.find((plan) => plan.id === insurancePlan);
+            
+            if (selectedPlan) {
+              const basePrice = procedureData.withInsurance[insurance] || procedureData.withoutInsurance;
+              procPriceWithInsurance = calculatePriceWithPlan(basePrice, selectedPlan);
+            } else {
+              procPriceWithInsurance = procedureData.withInsurance[insurance] || null;
+            }
+          } else {
+            procPriceWithInsurance = procedureData.withInsurance[insurance] || null;
+          }
+        }
+
+        const procPriceWithoutInsurance = procedureData.withoutInsurance;
+
+        // Add to procedure breakdown
+        procedurePrices.push({
+          procedureId: procId,
+          procedureName: procName,
+          priceWithInsurance: procPriceWithInsurance,
+          priceWithoutInsurance: procPriceWithoutInsurance,
+        });
+
+        // Accumulate totals
+        if (procPriceWithInsurance !== null) {
+          totalPriceWithInsurance = (totalPriceWithInsurance || 0) + procPriceWithInsurance;
+        }
+        totalPriceWithoutInsurance += procPriceWithoutInsurance;
       }
-      
-      const priceWithoutInsurance = procedureData.withoutInsurance;
+
+      // Only add hospital if it offers all requested procedures
+      if (!hospitalHasAllProcedures) {
+        continue;
+      }
 
       results.push({
         hospital: legacyHospital as Hospital,
         distance,
         inNetwork,
-        priceWithInsurance,
-        priceWithoutInsurance,
+        priceWithInsurance: totalPriceWithInsurance,
+        priceWithoutInsurance: totalPriceWithoutInsurance,
         insurancePlan: selectedPlan,
+        procedures: procedureList.length > 1 ? procedurePrices : undefined,
+        totalPriceWithInsurance: totalPriceWithInsurance,
+        totalPriceWithoutInsurance: totalPriceWithoutInsurance,
       });
     }
 

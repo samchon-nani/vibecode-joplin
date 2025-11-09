@@ -134,6 +134,73 @@
 
 .price-value.no-insurance {
   color: #c62828;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.total-badge-modal {
+  font-size: 0.75rem;
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.procedure-breakdown-modal {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.breakdown-header-modal {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.breakdown-item-modal {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.breakdown-item-modal:last-of-type {
+  border-bottom: none;
+}
+
+.breakdown-procedure-modal {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.breakdown-price-modal {
+  font-weight: 600;
+  color: #333;
+}
+
+.breakdown-total-modal {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.75rem;
+  margin-top: 0.5rem;
+  border-top: 2px solid #667eea;
+  font-weight: 700;
+}
+
+.breakdown-label-modal {
+  color: #333;
+}
+
+.breakdown-price-total-modal {
+  color: #667eea;
+  font-size: 1.1rem;
 }
 
 .price-savings {

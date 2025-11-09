@@ -8,6 +8,7 @@ import { getUserProfile } from '@/lib/userProfile';
 interface SearchFormProps {
   onSearch: (params: {
     procedure: string;
+    procedures?: string[];
     location: string;
     insurance: string;
     insurancePlan?: string;
@@ -22,7 +23,7 @@ interface SearchFormProps {
 export default function SearchForm({ onSearch, loading }: SearchFormProps) {
   const [searchMode, setSearchMode] = useState<'filter' | 'ai'>('filter');
   const [aiQuery, setAiQuery] = useState('');
-  const [procedure, setProcedure] = useState('');
+  const [procedures, setProcedures] = useState<string[]>([]);
   const [procedureSearch, setProcedureSearch] = useState('');
   const [showProcedureDropdown, setShowProcedureDropdown] = useState(false);
   const [location, setLocation] = useState('');
@@ -49,16 +50,26 @@ export default function SearchForm({ onSearch, loading }: SearchFormProps) {
     );
   });
 
-  // Get selected procedure display text
-  const selectedProcedure = proceduresData.find((proc) => proc.id === procedure);
-  const procedureDisplayText = selectedProcedure
-    ? `${selectedProcedure.name} - ${selectedProcedure.description}`
+  // Get selected procedures display text
+  const selectedProcedures = proceduresData.filter((proc) => procedures.includes(proc.id));
+  const procedureDisplayText = selectedProcedures.length > 0
+    ? selectedProcedures.map(proc => proc.name).join(', ')
     : '';
 
   const handleProcedureSelect = (procId: string) => {
-    setProcedure(procId);
-    setProcedureSearch(''); // Clear search to show selected procedure
-    setShowProcedureDropdown(false);
+    if (procedures.includes(procId)) {
+      // Remove if already selected
+      setProcedures(procedures.filter(id => id !== procId));
+    } else {
+      // Add to selection
+      setProcedures([...procedures, procId]);
+    }
+    setProcedureSearch(''); // Clear search
+    // Keep dropdown open for multiple selections
+  };
+
+  const handleRemoveProcedure = (procId: string) => {
+    setProcedures(procedures.filter(id => id !== procId));
   };
 
   // Load user profile on mount
@@ -112,16 +123,17 @@ export default function SearchForm({ onSearch, loading }: SearchFormProps) {
     }
 
     // Validate required fields
-    if (!procedure || !locationString || !maxDistance) {
-      // If procedure is not selected, show dropdown
-      if (!procedure) {
+    if (procedures.length === 0 || !locationString || !maxDistance) {
+      // If no procedures selected, show dropdown
+      if (procedures.length === 0) {
         setShowProcedureDropdown(true);
       }
       return;
     }
 
     onSearch({
-      procedure,
+      procedure: procedures.join(','), // Send as comma-separated string for API compatibility
+      procedures: procedures, // Also send as array for future use
       location: locationString,
       insurance,
       insurancePlan: insurancePlan || undefined,
@@ -210,40 +222,51 @@ export default function SearchForm({ onSearch, loading }: SearchFormProps) {
         <div className="form-group procedure-search-group">
           <label htmlFor="procedure">Medical Procedure</label>
           <div className="procedure-search-container">
-            <input
-              type="text"
-              id="procedure"
-              value={procedureSearch || procedureDisplayText}
-              onChange={(e) => {
-                const value = e.target.value;
-                setProcedureSearch(value);
-                // Clear selection if user is typing something different
-                if (value && value !== procedureDisplayText) {
-                  setProcedure('');
-                }
-                // Show dropdown if there are results or if input is empty (to show all)
-                setShowProcedureDropdown(true);
-              }}
-              onFocus={() => {
-                // Show dropdown when focused
-                setShowProcedureDropdown(true);
-              }}
-              onBlur={() => {
-                // Delay to allow click on dropdown item
-                setTimeout(() => {
-                  setShowProcedureDropdown(false);
-                  // If no procedure selected and search is empty, clear search
-                  if (!procedure && !procedureSearch) {
-                    setProcedureSearch('');
-                  }
-                }, 200);
-              }}
-              placeholder={procedure ? procedureDisplayText : "Search procedures (e.g., MRI, CT scan, 76700)..."}
-              required
-              disabled={loading}
-              className="procedure-search-input"
-              autoComplete="off"
-            />
+            <div className="procedure-input-wrapper">
+              <input
+                type="text"
+                id="procedure"
+                value={procedureSearch}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  setProcedureSearch(value);
+                  // Show dropdown if there are results or if input is empty (to show all)
+                  setShowProcedureDropdown(true);
+                }}
+                onFocus={() => {
+                  // Show dropdown when focused
+                  setShowProcedureDropdown(true);
+                }}
+                onBlur={() => {
+                  // Delay to allow click on dropdown item
+                  setTimeout(() => {
+                    setShowProcedureDropdown(false);
+                  }, 200);
+                }}
+                placeholder={procedures.length > 0 ? "Add more procedures..." : "Search procedures (e.g., MRI, CT scan, 76700)..."}
+                required={procedures.length === 0}
+                disabled={loading}
+                className="procedure-search-input"
+                autoComplete="off"
+              />
+              {procedures.length > 0 && (
+                <div className="selected-procedures">
+                  {selectedProcedures.map((proc) => (
+                    <span key={proc.id} className="selected-procedure-tag">
+                      {proc.name}
+                      <button
+                        type="button"
+                        onClick={() => handleRemoveProcedure(proc.id)}
+                        className="remove-procedure-btn"
+                        aria-label={`Remove ${proc.name}`}
+                      >
+                        ×
+                      </button>
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
             {showProcedureDropdown && filteredProcedures.length > 0 && (
               <div className="procedure-dropdown">
                 {filteredProcedures.length > 50 ? (
@@ -254,17 +277,28 @@ export default function SearchForm({ onSearch, loading }: SearchFormProps) {
                 <div className="procedure-dropdown-list">
                   {filteredProcedures.slice(0, 50).map((proc) => {
                     const cptCode = proc.code_information?.[0]?.code || '';
+                    const isSelected = procedures.includes(proc.id);
                     return (
                       <div
                         key={proc.id}
-                        className={`procedure-dropdown-item ${procedure === proc.id ? 'selected' : ''}`}
+                        className={`procedure-dropdown-item ${isSelected ? 'selected' : ''}`}
                         onClick={() => handleProcedureSelect(proc.id)}
                         onMouseDown={(e) => e.preventDefault()} // Prevent blur before click
                       >
-                        <div className="procedure-item-name">{proc.name}</div>
-                        <div className="procedure-item-details">
-                          {proc.description}
-                          {cptCode && <span className="procedure-item-code">CPT: {cptCode}</span>}
+                        <div className="procedure-item-checkbox">
+                          <input
+                            type="checkbox"
+                            checked={isSelected}
+                            onChange={() => {}} // Handled by parent onClick
+                            readOnly
+                          />
+                        </div>
+                        <div className="procedure-item-content">
+                          <div className="procedure-item-name">{proc.name}</div>
+                          <div className="procedure-item-details">
+                            {proc.description}
+                            {cptCode && <span className="procedure-item-code">CPT: {cptCode}</span>}
+                          </div>
                         </div>
                       </div>
                     );
@@ -278,9 +312,14 @@ export default function SearchForm({ onSearch, loading }: SearchFormProps) {
               </div>
             )}
           </div>
-          {!procedure && procedureSearch && (
+          {procedures.length === 0 && procedureSearch && (
             <div className="procedure-validation-hint">
-              Please select a procedure from the dropdown
+              Please select at least one procedure from the dropdown
+            </div>
+          )}
+          {procedures.length > 0 && (
+            <div className="procedure-count-hint">
+              {procedures.length} procedure{procedures.length !== 1 ? 's' : ''} selected. Total cost will be calculated.
             </div>
           )}
         </div>
@@ -574,6 +613,10 @@ export default function SearchForm({ onSearch, loading }: SearchFormProps) {
           position: relative;
         }
 
+        .procedure-input-wrapper {
+          position: relative;
+        }
+
         .procedure-search-input {
           width: 100%;
           padding: 0.75rem;
@@ -581,6 +624,53 @@ export default function SearchForm({ onSearch, loading }: SearchFormProps) {
           border-radius: 8px;
           font-size: 1rem;
           transition: border-color 0.2s;
+        }
+
+        .selected-procedures {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+          margin-top: 0.5rem;
+        }
+
+        .selected-procedure-tag {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+          padding: 0.5rem 0.75rem;
+          border-radius: 20px;
+          font-size: 0.85rem;
+          font-weight: 500;
+        }
+
+        .remove-procedure-btn {
+          background: rgba(255, 255, 255, 0.3);
+          border: none;
+          color: white;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          cursor: pointer;
+          font-size: 1.2rem;
+          line-height: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background-color 0.2s;
+          padding: 0;
+        }
+
+        .remove-procedure-btn:hover {
+          background: rgba(255, 255, 255, 0.5);
+        }
+
+        .procedure-count-hint {
+          margin-top: 0.5rem;
+          font-size: 0.85rem;
+          color: #4caf50;
+          font-weight: 500;
         }
 
         .procedure-search-input:focus {
@@ -624,6 +714,24 @@ export default function SearchForm({ onSearch, loading }: SearchFormProps) {
           cursor: pointer;
           transition: background-color 0.15s;
           border-bottom: 1px solid #f0f0f0;
+          display: flex;
+          align-items: flex-start;
+          gap: 0.75rem;
+        }
+
+        .procedure-item-checkbox {
+          flex-shrink: 0;
+          margin-top: 0.125rem;
+        }
+
+        .procedure-item-checkbox input[type="checkbox"] {
+          width: 18px;
+          height: 18px;
+          cursor: pointer;
+        }
+
+        .procedure-item-content {
+          flex: 1;
         }
 
         .procedure-dropdown-item:last-child {

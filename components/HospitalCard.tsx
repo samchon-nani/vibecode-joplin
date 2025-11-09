@@ -14,9 +14,10 @@ interface HospitalCardProps {
 }
 
 export default function HospitalCard({ result, rank, insuranceType, zipCode, cashOnly = false }: HospitalCardProps) {
-  const { hospital, distance, inNetwork, priceWithInsurance, priceWithoutInsurance, insurancePlan } = result;
+  const { hospital, distance, inNetwork, priceWithInsurance, priceWithoutInsurance, insurancePlan, procedures } = result;
   const [showCharityModal, setShowCharityModal] = useState(false);
   const [showPriceTooltip, setShowPriceTooltip] = useState<string | null>(null);
+  const [showProcedureBreakdown, setShowProcedureBreakdown] = useState<'with-insurance' | 'without-insurance' | null>(null);
 
   // Generate plain language cost breakdowns
   const costWithInsurance = priceWithInsurance !== null
@@ -72,6 +73,15 @@ export default function HospitalCard({ result, rank, insuranceType, zipCode, cas
                 <div className="price-section">
                   <div className="price-label">
                     With Insurance:
+                    {procedures && procedures.length > 1 && (
+                      <button
+                        type="button"
+                        className="breakdown-toggle"
+                        onClick={() => setShowProcedureBreakdown(showProcedureBreakdown === 'with-insurance' ? null : 'with-insurance')}
+                      >
+                        {showProcedureBreakdown === 'with-insurance' ? '▼' : '▶'} Breakdown
+                      </button>
+                    )}
                     <button
                       type="button"
                       className="price-info-icon"
@@ -100,7 +110,32 @@ export default function HospitalCard({ result, rank, insuranceType, zipCode, cas
                   </div>
                   <div className="price-value insurance-price">
                     ${costWithInsurance.total.toLocaleString()}
+                    {procedures && procedures.length > 1 && (
+                      <span className="total-badge">Total</span>
+                    )}
                   </div>
+                  {procedures && procedures.length > 1 && showProcedureBreakdown === 'with-insurance' && (
+                    <div className="procedure-breakdown">
+                      <div className="breakdown-header">Cost Breakdown by Procedure:</div>
+                      {procedures.map((proc) => {
+                        const procCostWithInsurance = proc.priceWithInsurance !== null
+                          ? generatePlainLanguageCost(proc.priceWithInsurance, insuranceType, true, proc.priceWithoutInsurance, insurancePlan)
+                          : null;
+                        return (
+                          <div key={proc.procedureId} className="breakdown-item">
+                            <span className="breakdown-procedure">{proc.procedureName}:</span>
+                            <span className="breakdown-price">
+                              {procCostWithInsurance ? `$${procCostWithInsurance.total.toLocaleString()}` : 'N/A'}
+                            </span>
+                          </div>
+                        );
+                      })}
+                      <div className="breakdown-total">
+                        <span className="breakdown-label">Total:</span>
+                        <span className="breakdown-price-total">${costWithInsurance.total.toLocaleString()}</span>
+                      </div>
+                    </div>
+                  )}
                   <div className="cost-breakdown">
                     {costWithInsurance.deductible && costWithInsurance.deductible > 0 && (
                       <div className="breakdown-item">
@@ -137,6 +172,15 @@ export default function HospitalCard({ result, rank, insuranceType, zipCode, cas
           <div className="price-section">
             <div className="price-label">
               {cashOnly ? 'Cash/Self-Pay Price:' : 'Without Insurance:'}
+              {procedures && procedures.length > 1 && (
+                <button
+                  type="button"
+                  className="breakdown-toggle"
+                  onClick={() => setShowProcedureBreakdown(showProcedureBreakdown === 'without-insurance' ? null : 'without-insurance')}
+                >
+                  {showProcedureBreakdown === 'without-insurance' ? '▼' : '▶'} Breakdown
+                </button>
+              )}
               <button
                 type="button"
                 className="price-info-icon"
@@ -165,7 +209,25 @@ export default function HospitalCard({ result, rank, insuranceType, zipCode, cas
             </div>
             <div className="price-value no-insurance-price">
               ${costWithoutInsurance.total.toLocaleString()}
+              {procedures && procedures.length > 1 && (
+                <span className="total-badge">Total</span>
+              )}
             </div>
+            {procedures && procedures.length > 1 && showProcedureBreakdown === 'without-insurance' && (
+              <div className="procedure-breakdown">
+                <div className="breakdown-header">Cost Breakdown by Procedure:</div>
+                {procedures.map((proc) => (
+                  <div key={proc.procedureId} className="breakdown-item">
+                    <span className="breakdown-procedure">{proc.procedureName}:</span>
+                    <span className="breakdown-price">${proc.priceWithoutInsurance.toLocaleString()}</span>
+                  </div>
+                ))}
+                <div className="breakdown-total">
+                  <span className="breakdown-label">Total:</span>
+                  <span className="breakdown-price-total">${costWithoutInsurance.total.toLocaleString()}</span>
+                </div>
+              </div>
+            )}
             <div className="plain-language">
               💡 {costWithoutInsurance.plainLanguage}
             </div>
@@ -199,6 +261,7 @@ export default function HospitalCard({ result, rank, insuranceType, zipCode, cas
             priceWithoutInsurance={priceWithoutInsurance}
             insuranceType={insuranceType}
             insurancePlan={insurancePlan}
+            procedures={procedures}
           />
         )}
       </div>
@@ -390,6 +453,89 @@ export default function HospitalCard({ result, rank, insuranceType, zipCode, cas
         .price-value {
           font-size: 1.5rem;
           font-weight: 700;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        .total-badge {
+          font-size: 0.75rem;
+          background: #e3f2fd;
+          color: #1976d2;
+          padding: 0.25rem 0.5rem;
+          border-radius: 4px;
+          font-weight: 600;
+        }
+
+        .breakdown-toggle {
+          background: none;
+          border: 1px solid #667eea;
+          color: #667eea;
+          padding: 0.25rem 0.5rem;
+          border-radius: 4px;
+          font-size: 0.75rem;
+          cursor: pointer;
+          margin-left: 0.5rem;
+          transition: all 0.2s;
+        }
+
+        .breakdown-toggle:hover {
+          background: #667eea;
+          color: white;
+        }
+
+        .procedure-breakdown {
+          margin-top: 1rem;
+          padding: 1rem;
+          background: #f8f9fa;
+          border-radius: 8px;
+          border: 1px solid #e0e0e0;
+        }
+
+        .breakdown-header {
+          font-weight: 600;
+          color: #333;
+          margin-bottom: 0.75rem;
+          font-size: 0.9rem;
+        }
+
+        .breakdown-item {
+          display: flex;
+          justify-content: space-between;
+          padding: 0.5rem 0;
+          border-bottom: 1px solid #e0e0e0;
+        }
+
+        .breakdown-item:last-of-type {
+          border-bottom: none;
+        }
+
+        .breakdown-procedure {
+          color: #666;
+          font-size: 0.9rem;
+        }
+
+        .breakdown-price {
+          font-weight: 600;
+          color: #333;
+        }
+
+        .breakdown-total {
+          display: flex;
+          justify-content: space-between;
+          padding-top: 0.75rem;
+          margin-top: 0.5rem;
+          border-top: 2px solid #667eea;
+          font-weight: 700;
+        }
+
+        .breakdown-label {
+          color: #333;
+        }
+
+        .breakdown-price-total {
+          color: #667eea;
+          font-size: 1.1rem;
         }
 
         .insurance-price {

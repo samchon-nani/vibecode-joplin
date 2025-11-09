@@ -53,6 +53,13 @@ export interface Procedure {
   }[];
 }
 
+export interface ProcedurePrice {
+  procedureId: string;
+  procedureName: string;
+  priceWithInsurance: number | null;
+  priceWithoutInsurance: number;
+}
+
 export interface SearchResult {
   hospital: Hospital;
   distance: number;
@@ -60,6 +67,9 @@ export interface SearchResult {
   priceWithInsurance: number | null;
   priceWithoutInsurance: number;
   insurancePlan?: InsurancePlan;
+  procedures?: ProcedurePrice[]; // Breakdown by procedure for multiple procedures
+  totalPriceWithInsurance?: number | null;
+  totalPriceWithoutInsurance?: number;
 }
 
 export interface CostBreakdown {

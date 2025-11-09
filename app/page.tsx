@@ -23,6 +23,7 @@ export default function Home() {
   } | null>(null);
   const [pendingSearch, setPendingSearch] = useState<{
     procedure: string;
+    procedures?: string[];
     location: string;
     insurance: string;
     insurancePlan?: string;
@@ -34,6 +35,7 @@ export default function Home() {
 
   const handleSearch = async (searchParams: {
     procedure: string;
+    procedures?: string[];
     location: string;
     insurance: string;
     insurancePlan?: string;
