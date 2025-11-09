@@ -113,25 +113,47 @@
 
 ---
 
-## ACT 4: CALL TO ACTION (Closing) - 20-30 seconds
+## ACT 4: SUMMARY (Closing) - 20-30 seconds
 
-**[VISUAL: Show early adopter section or contact info]**
+**[VISUAL: Show app overview or return to homepage]**
 
-"We're launching a limited early-adopter program for healthcare organizations ready to lead with AI-powered billing transparency."
+"To summarize, BillHarmony is an AI-powered platform that brings clarity to healthcare costs. We solve the problem of opaque pricing and confusing medical bills by providing transparent, real-time price comparisons across hospitals."
 
-**[ACTION: Point to offer details]**
+**[ACTION: Point to key features]**
 
-"We're offering 50% off standard pricing for the first 6 months, with full access to all features and personalized onboarding. You'll also get direct access to our experts and influence on our development roadmap."
+"Key features include: AI-powered natural language search that understands plain English queries, transparent price comparison with in-network and out-of-network options, inpatient and outpatient procedure classification, and a comprehensive Financial Navigation Hub that helps patients find charity care and financial assistance programs."
+
+**[ACTION: Point to compliance badges]**
+
+"All of this is built with HIPAA and CMS compliance in mind, ensuring patient data is protected and we meet healthcare regulatory requirements."
 
 **[VISUAL: Show logo and tagline]**
 
-"Schedule a brief discovery call to secure your spot and review a custom rollout plan."
+"BillHarmony brings clarity to care costs—helping patients make informed decisions about their healthcare while reducing financial stress."
 
 **[PAUSE - Show logo]**
 
-"BillHarmony—Bringing Clarity to Care Costs."
+"Thank you for watching."
 
 **[END]**
+
+---
+
+## HACKATHON REQUIREMENTS CHECKLIST
+
+Make sure your video covers:
+- [ ] **Problem Statement** - Clear explanation of the healthcare billing problem
+- [ ] **Solution Overview** - What BillHarmony does and how it solves the problem
+- [ ] **Key Features Demonstrated**:
+  - [ ] AI-powered natural language search
+  - [ ] Price comparison with transparency
+  - [ ] Inpatient/outpatient classification
+  - [ ] Financial Navigation Hub
+  - [ ] Charity Eligibility screening
+- [ ] **Technical Implementation** - Shows the app working (not just slides)
+- [ ] **Value Proposition** - Clear explanation of benefits to patients
+- [ ] **Compliance** - HIPAA and CMS compliance mentioned
+- [ ] **Summary** - Clear closing that explains what the app does
 
 ---
 
@@ -159,7 +181,7 @@
 5. ✅ Financial Navigation Hub tabs
 6. ✅ Charity Eligibility feature (if time permits)
 7. ✅ HIPAA/CMS compliance badges
-8. ✅ Early adopter program section
+8. ✅ Summary of what the app does
 
 ### Timing Targets:
 - Act 1: 30-45 seconds
@@ -199,7 +221,7 @@ If you're running over time, you can shorten by:
 - **Be clear** - Speak slowly enough to be understood
 - **Be confident** - You built this, own it!
 - **Show, don't just tell** - Let the demo speak for itself
-- **End strong** - Close with energy and your tagline
+- **End strong** - Summarize what the app does and its value proposition
 
 Good luck! 🚀
 
