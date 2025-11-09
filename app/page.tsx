@@ -150,14 +150,50 @@ export default function Home() {
             <span>CMS Compliant</span>
           </div>
         </div>
-        <h1>BillHarmony</h1>
+        <h1>
+          Bill<span className="wave-logo"></span>Harmony
+        </h1>
         <p className="tagline">Bringing Clarity to Care Costs</p>
         <p className="subtitle">
-          Compare prices, check charity eligibility, and find financial assistance programs
+          AI-powered platform providing transparency and simplicity for all payor models—unifying billing data, automating eligibility checks, and delivering clear financial insights in real time.
         </p>
       </div>
 
       <SearchForm onSearch={handleSearch} loading={loading} />
+
+      {!hasSearched && (
+        <div className="early-adopter-section">
+          <div className="early-adopter-content">
+            <h2>Early Adopter Program</h2>
+            <p>
+              We're launching a limited early-adopter program for healthcare organizations ready to lead with AI-powered billing transparency.
+            </p>
+            <div className="offer-details">
+              <div className="offer-item">
+                <span className="offer-icon">🎯</span>
+                <div>
+                  <strong>50% off</strong> standard pricing for the first 6 months
+                </div>
+              </div>
+              <div className="offer-item">
+                <span className="offer-icon">✨</span>
+                <div>
+                  <strong>Full access</strong> to all features and personalized onboarding
+                </div>
+              </div>
+              <div className="offer-item">
+                <span className="offer-icon">🤝</span>
+                <div>
+                  <strong>Direct access</strong> to experts and influence on development roadmap
+                </div>
+              </div>
+            </div>
+            <p className="cta-note">
+              Schedule a brief discovery call to secure your spot and review a custom rollout plan.
+            </p>
+          </div>
+        </div>
+      )}
 
       {missingInfo && (
         <MissingInfoModal
@@ -219,11 +255,12 @@ export default function Home() {
           display: inline-flex;
           align-items: center;
           gap: 0.5rem;
-          background: rgba(255, 255, 255, 0.2);
+          background: rgba(255, 255, 255, 0.25);
           padding: 0.5rem 1rem;
           border-radius: 20px;
           font-size: 0.9rem;
           backdrop-filter: blur(10px);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         .badge-icon {
@@ -232,24 +269,45 @@ export default function Home() {
 
         .header h1 {
           font-size: 3.5rem;
-          font-weight: 700;
+          font-weight: 800;
           margin-bottom: 0.5rem;
           text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-          letter-spacing: -0.02em;
+          letter-spacing: 1.2px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.35em;
+        }
+
+        .wave-logo {
+          display: inline-block;
+          width: 1.15em;
+          height: 1em;
+          background: linear-gradient(90deg, #20cceb 10%, #43b881 70%, #fac240);
+          border-radius: 50% 55% 50% 50% / 60% 45% 55% 55%;
+          box-shadow: 0 2px 9px rgba(32, 204, 235, 0.09);
         }
 
         .tagline {
           font-size: 1.5rem;
-          font-weight: 400;
+          font-weight: 500;
           margin-bottom: 0.5rem;
           opacity: 0.95;
-          font-style: italic;
+          color: #fac240;
+          max-width: 650px;
+          margin-left: auto;
+          margin-right: auto;
+          line-height: 1.45;
         }
 
         .subtitle {
-          font-size: 1.25rem;
-          opacity: 0.9;
-          margin-top: 0.5rem;
+          font-size: 1.1rem;
+          opacity: 0.95;
+          margin-top: 1rem;
+          max-width: 800px;
+          margin-left: auto;
+          margin-right: auto;
+          line-height: 1.6;
         }
 
         .error-message {
@@ -269,13 +327,112 @@ export default function Home() {
           font-size: 1.25rem;
         }
 
+        .early-adopter-section {
+          margin: 3rem auto;
+          max-width: 900px;
+          padding: 0 1rem;
+        }
+
+        .early-adopter-content {
+          background: rgba(255, 255, 255, 0.15);
+          backdrop-filter: blur(10px);
+          border-radius: 1.25rem;
+          padding: 2.5rem 2rem;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .early-adopter-content h2 {
+          font-size: 1.8rem;
+          font-weight: 700;
+          margin-bottom: 1rem;
+          color: #fac240;
+          text-align: center;
+        }
+
+        .early-adopter-content > p {
+          font-size: 1.1rem;
+          line-height: 1.6;
+          margin-bottom: 1.5rem;
+          text-align: center;
+          color: white;
+          opacity: 0.95;
+        }
+
+        .offer-details {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 1.2rem;
+          margin: 2rem 0;
+        }
+
+        @media (min-width: 600px) {
+          .offer-details {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+
+        .offer-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          padding: 1.2rem;
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 0.8rem;
+          gap: 0.5rem;
+        }
+
+        .offer-icon {
+          font-size: 2rem;
+        }
+
+        .offer-item div {
+          color: white;
+          font-size: 0.95rem;
+          line-height: 1.4;
+        }
+
+        .offer-item strong {
+          color: #fac240;
+          font-weight: 600;
+        }
+
+        .cta-note {
+          text-align: center;
+          font-size: 1rem;
+          color: white;
+          opacity: 0.9;
+          margin-top: 1.5rem;
+          font-style: italic;
+        }
+
         @media (max-width: 768px) {
           .header h1 {
             font-size: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+
+          .wave-logo {
+            width: 0.9em;
+            height: 0.8em;
           }
 
           .subtitle {
             font-size: 1rem;
+          }
+
+          .tagline {
+            font-size: 1.2rem;
+          }
+
+          .early-adopter-content {
+            padding: 1.5rem 1.2rem;
+          }
+
+          .early-adopter-content h2 {
+            font-size: 1.5rem;
           }
         }
       `}</style>

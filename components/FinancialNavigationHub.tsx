@@ -5,8 +5,6 @@ import { SearchResult } from '@/lib/types';
 import { generatePlainLanguageCost } from '@/lib/utils';
 import ResultsList from './ResultsList';
 import PayorAdaptabilityInfo from './PayorAdaptabilityInfo';
-import ProactiveCommunicationInterface from './ProactiveCommunicationInterface';
-import EPICIntegrationDemo from './EPICIntegrationDemo';
 
 interface FinancialNavigationHubProps {
   results: SearchResult[];
@@ -15,7 +13,7 @@ interface FinancialNavigationHubProps {
   cashOnly?: boolean;
 }
 
-type TabType = 'prices' | 'assistance' | 'payment-plans' | 'insurance' | 'communication' | 'epic';
+type TabType = 'prices' | 'assistance' | 'payment-plans' | 'insurance';
 
 export default function FinancialNavigationHub({
   results,
@@ -106,18 +104,6 @@ export default function FinancialNavigationHub({
         >
           💼 Insurance Info
         </button>
-        <button
-          className={`tab ${activeTab === 'communication' ? 'active' : ''}`}
-          onClick={() => setActiveTab('communication')}
-        >
-          📧 Communication
-        </button>
-        <button
-          className={`tab ${activeTab === 'epic' ? 'active' : ''}`}
-          onClick={() => setActiveTab('epic')}
-        >
-          🏥 EPIC Integration
-        </button>
       </div>
 
       <div className="tab-content">
@@ -192,6 +178,15 @@ export default function FinancialNavigationHub({
                   <li>Contact the hospital to complete your application</li>
                 </ol>
               </div>
+
+              <div className="proactive-communication-note">
+                <h4>📧 Proactive Communication</h4>
+                <p>
+                  We'll proactively notify you via email or SMS when new financial assistance programs become available, 
+                  payment reminders are due, or your eligibility status changes. You'll receive tailored options and 
+                  guidance to help you navigate your healthcare financial journey.
+                </p>
+              </div>
             </div>
           </div>
         )}
@@ -255,18 +250,6 @@ export default function FinancialNavigationHub({
         {activeTab === 'insurance' && (
           <div className="tab-panel">
             <PayorAdaptabilityInfo insuranceType={insuranceType} />
-          </div>
-        )}
-
-        {activeTab === 'communication' && (
-          <div className="tab-panel">
-            <ProactiveCommunicationInterface />
-          </div>
-        )}
-
-        {activeTab === 'epic' && (
-          <div className="tab-panel">
-            <EPICIntegrationDemo />
           </div>
         )}
       </div>
@@ -469,6 +452,26 @@ export default function FinancialNavigationHub({
           padding-left: 1.5rem;
           color: #666;
           line-height: 2;
+        }
+
+        .proactive-communication-note {
+          background: #f3e5f5;
+          border-left: 4px solid #9c27b0;
+          border-radius: 8px;
+          padding: 1.5rem;
+          margin-top: 2rem;
+        }
+
+        .proactive-communication-note h4 {
+          margin: 0 0 0.75rem 0;
+          color: #7b1fa2;
+          font-size: 1.1rem;
+        }
+
+        .proactive-communication-note p {
+          margin: 0;
+          color: #666;
+          line-height: 1.6;
         }
 
         .plans-grid {
