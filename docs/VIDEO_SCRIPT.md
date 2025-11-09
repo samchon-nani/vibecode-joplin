@@ -139,6 +139,28 @@
 
 ---
 
+## OPTIONAL: FUTURE FEATURES (If Time Permits) - 15-20 seconds
+
+**[VISUAL: Can show on screen or just mention verbally]**
+
+"If I had more time, I would have liked to add a few more features to make BillHarmony even more powerful."
+
+**[ACTION: Can point to inpatient classification or show a mockup]**
+
+"First, I'd add an AI search feature for daily room costs for inpatient care. Users could search for something like 'How much does a private room cost per day for inpatient surgery?' and get an estimate of the total cost based on typical length of stay."
+
+**[ACTION: Can show insurance section or mention it]**
+
+"Second, I'd add an option for users to input how much of their insurance they've already used this year—their deductible, copays, and coinsurance already paid. This way, they could see exactly what they'd pay for a procedure based on what they've already spent, giving them a more accurate picture of their actual out-of-pocket costs."
+
+**[VISUAL: Show logo]**
+
+"These features would provide even more transparency and help patients make even better-informed decisions about their healthcare costs."
+
+**[END]**
+
+---
+
 ## HACKATHON REQUIREMENTS CHECKLIST
 
 Make sure your video covers:
@@ -188,7 +210,8 @@ Make sure your video covers:
 - Act 2: 20-30 seconds  
 - Act 3: 2-3 minutes (main focus)
 - Act 4: 20-30 seconds
-- **Total: 3-4 minutes**
+- Optional Future Features: 15-20 seconds (if time permits)
+- **Total: 3-4 minutes (or 3:15-4:20 with future features)**
 
 ---
 
@@ -199,6 +222,7 @@ If you're running over time, you can shorten by:
 - Skipping Charity Eligibility demo (just mention it)
 - Condensing feature highlights to 15 seconds
 - Shortening closing to 15 seconds
+- Skipping the Future Features section (or mention it very briefly)
 
 ---
 
@@ -212,6 +236,9 @@ If you're running over time, you can shorten by:
 
 ### If you want to emphasize the AI:
 "What makes BillHarmony different is our AI understands natural language. You don't need to know medical codes or insurance terminology—just describe what you need, and we'll find it."
+
+### Shorter version of Future Features (if time is tight):
+"If I had more time, I would have liked to add an AI search for daily room costs for inpatient care, and an option for users to input how much of their insurance they've already used this year, so they can see their actual out-of-pocket costs based on what they've already spent."
 
 ---
 
