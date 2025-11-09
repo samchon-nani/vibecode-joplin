@@ -131,6 +131,7 @@ export function findProcedureInHospital(hospital: any, procedureId: string) {
   return {
     withInsurance,
     withoutInsurance: chargeInfo.standard_charges?.gross_charge || chargeInfo.standard_charges?.discounted_cash_price || 0,
+    setting: chargeInfo.setting === 'inpatient' ? 'inpatient' : 'outpatient', // Extract setting from hospital data
   };
 }
 

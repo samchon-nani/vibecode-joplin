@@ -58,6 +58,8 @@ export interface ProcedurePrice {
   procedureName: string;
   priceWithInsurance: number | null;
   priceWithoutInsurance: number;
+  setting?: 'inpatient' | 'outpatient'; // Classification: inpatient requires hospital stay, outpatient is same-day
+  typicalLengthOfStay?: string; // For inpatient procedures (e.g., "1-3 days", "2-5 days")
 }
 
 export interface SearchResult {
@@ -70,6 +72,7 @@ export interface SearchResult {
   procedures?: ProcedurePrice[]; // Breakdown by procedure for multiple procedures
   totalPriceWithInsurance?: number | null;
   totalPriceWithoutInsurance?: number;
+  setting?: 'inpatient' | 'outpatient'; // Overall classification (for single procedure) or most common (for multiple)
 }
 
 export interface CostBreakdown {

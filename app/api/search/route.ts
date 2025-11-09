@@ -137,6 +137,7 @@ export async function POST(request: NextRequest) {
         }
 
         const procPriceWithoutInsurance = procedureData.withoutInsurance;
+        const setting = procedureData.setting || 'outpatient'; // Default to outpatient if not specified
 
         // Add to procedure breakdown
         procedurePrices.push({
@@ -144,6 +145,7 @@ export async function POST(request: NextRequest) {
           procedureName: procName,
           priceWithInsurance: procPriceWithInsurance,
           priceWithoutInsurance: procPriceWithoutInsurance,
+          setting: setting as 'inpatient' | 'outpatient',
         });
 
         // Accumulate totals
@@ -158,6 +160,16 @@ export async function POST(request: NextRequest) {
         continue;
       }
 
+      // Determine overall setting: for single procedure use that, for multiple use most common
+      let overallSetting: 'inpatient' | 'outpatient' | undefined;
+      if (procedureList.length === 1) {
+        overallSetting = procedurePrices[0]?.setting;
+      } else if (procedurePrices.length > 0) {
+        // For multiple procedures, use the most common setting (or default to outpatient)
+        const inpatientCount = procedurePrices.filter(p => p.setting === 'inpatient').length;
+        overallSetting = inpatientCount > procedurePrices.length / 2 ? 'inpatient' : 'outpatient';
+      }
+
       results.push({
         hospital: legacyHospital as Hospital,
         distance,
@@ -168,6 +180,7 @@ export async function POST(request: NextRequest) {
         procedures: procedureList.length > 1 ? procedurePrices : undefined,
         totalPriceWithInsurance: totalPriceWithInsurance,
         totalPriceWithoutInsurance: totalPriceWithoutInsurance,
+        setting: overallSetting,
       });
     }
 

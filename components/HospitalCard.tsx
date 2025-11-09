@@ -14,7 +14,7 @@ interface HospitalCardProps {
 }
 
 export default function HospitalCard({ result, rank, insuranceType, zipCode, cashOnly = false }: HospitalCardProps) {
-  const { hospital, distance, inNetwork, priceWithInsurance, priceWithoutInsurance, insurancePlan, procedures } = result;
+  const { hospital, distance, inNetwork, priceWithInsurance, priceWithoutInsurance, insurancePlan, procedures, setting } = result;
   const [showCharityModal, setShowCharityModal] = useState(false);
   const [showPriceTooltip, setShowPriceTooltip] = useState<string | null>(null);
   const [showProcedureBreakdown, setShowProcedureBreakdown] = useState<'with-insurance' | 'without-insurance' | null>(null);
@@ -62,6 +62,25 @@ export default function HospitalCard({ result, rank, insuranceType, zipCode, cas
                 <span className="status-icon">✗</span>
                 <span>Out-of-Network</span>
               </>
+            )}
+          </div>
+        )}
+
+        {setting && (
+          <div className={`procedure-setting ${setting === 'inpatient' ? 'inpatient' : 'outpatient'}`}>
+            <span className="setting-icon">{setting === 'inpatient' ? '🏥' : '🏃'}</span>
+            <span className="setting-label">
+              {setting === 'inpatient' ? 'Inpatient' : 'Outpatient'} Procedure
+            </span>
+            {setting === 'inpatient' && (
+              <span className="setting-note">
+                (Requires hospital admission/overnight stay)
+              </span>
+            )}
+            {setting === 'outpatient' && (
+              <span className="setting-note">
+                (Same-day procedure, no overnight stay)
+              </span>
             )}
           </div>
         )}
@@ -123,7 +142,14 @@ export default function HospitalCard({ result, rank, insuranceType, zipCode, cas
                           : null;
                         return (
                           <div key={proc.procedureId} className="breakdown-item">
-                            <span className="breakdown-procedure">{proc.procedureName}:</span>
+                            <div className="breakdown-procedure-info">
+                              <span className="breakdown-procedure">{proc.procedureName}:</span>
+                              {proc.setting && (
+                                <span className={`breakdown-setting ${proc.setting === 'inpatient' ? 'inpatient' : 'outpatient'}`}>
+                                  {proc.setting === 'inpatient' ? '🏥 Inpatient' : '🏃 Outpatient'}
+                                </span>
+                              )}
+                            </div>
                             <span className="breakdown-price">
                               {procCostWithInsurance ? `$${procCostWithInsurance.total.toLocaleString()}` : 'N/A'}
                             </span>
@@ -218,7 +244,14 @@ export default function HospitalCard({ result, rank, insuranceType, zipCode, cas
                 <div className="breakdown-header">Cost Breakdown by Procedure:</div>
                 {procedures.map((proc) => (
                   <div key={proc.procedureId} className="breakdown-item">
-                    <span className="breakdown-procedure">{proc.procedureName}:</span>
+                    <div className="breakdown-procedure-info">
+                      <span className="breakdown-procedure">{proc.procedureName}:</span>
+                      {proc.setting && (
+                        <span className={`breakdown-setting ${proc.setting === 'inpatient' ? 'inpatient' : 'outpatient'}`}>
+                          {proc.setting === 'inpatient' ? '🏥 Inpatient' : '🏃 Outpatient'}
+                        </span>
+                      )}
+                    </div>
                     <span className="breakdown-price">${proc.priceWithoutInsurance.toLocaleString()}</span>
                   </div>
                 ))}
@@ -355,6 +388,58 @@ export default function HospitalCard({ result, rank, insuranceType, zipCode, cas
 
         .status-icon {
           font-size: 1.2rem;
+        }
+
+        .procedure-setting {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.75rem 1rem;
+          border-radius: 8px;
+          font-weight: 600;
+          margin: 0.5rem 0;
+          flex-wrap: wrap;
+        }
+
+        .procedure-setting.inpatient {
+          background: #fff3e0;
+          color: #e65100;
+          border: 1px solid #ff9800;
+        }
+
+        .procedure-setting.outpatient {
+          background: #e8f5e9;
+          color: #2e7d32;
+          border: 1px solid #4caf50;
+        }
+
+        .setting-icon {
+          font-size: 1.2rem;
+        }
+
+        .setting-label {
+          font-size: 0.95rem;
+        }
+
+        .setting-note {
+          font-size: 0.85rem;
+          font-weight: 400;
+          opacity: 0.8;
+          font-style: italic;
+          margin-left: auto;
+        }
+
+        @media (max-width: 768px) {
+          .procedure-setting {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.25rem;
+          }
+
+          .setting-note {
+            margin-left: 0;
+            width: 100%;
+          }
         }
 
         .pricing {
@@ -510,9 +595,34 @@ export default function HospitalCard({ result, rank, insuranceType, zipCode, cas
           border-bottom: none;
         }
 
+        .breakdown-procedure-info {
+          display: flex;
+          flex-direction: column;
+          gap: 0.25rem;
+        }
+
         .breakdown-procedure {
           color: #666;
           font-size: 0.9rem;
+        }
+
+        .breakdown-setting {
+          font-size: 0.75rem;
+          padding: 0.125rem 0.5rem;
+          border-radius: 4px;
+          font-weight: 600;
+          display: inline-block;
+          width: fit-content;
+        }
+
+        .breakdown-setting.inpatient {
+          background: #fff3e0;
+          color: #e65100;
+        }
+
+        .breakdown-setting.outpatient {
+          background: #e8f5e9;
+          color: #2e7d32;
         }
 
         .breakdown-price {
